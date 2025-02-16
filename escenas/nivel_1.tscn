@@ -72,10 +72,6 @@ script = ExtResource("1_ov7db")
 
 [node name="fondo" parent="." instance=ExtResource("2_6sp3d")]
 
-[node name="defenders_placer" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0.529412)
-position = Vector2(208, 32)
-
 [node name="zombies" type="Node2D" parent="."]
 position = Vector2(221, 232)
 
@@ -94,22 +90,27 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 104.0
 
-[node name="Button" type="Button" parent="tablero"]
+[node name="wanderer_button" type="Button" parent="tablero"]
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 flat = true
 
-[node name="wanderer_buy" type="AnimatedSprite2D" parent="tablero"]
+[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="tablero"]
 position = Vector2(288, 32)
 scale = Vector2(1.5119, 2)
 sprite_frames = SubResource("SpriteFrames_q3cr1")
 autoplay = "default"
 frame_progress = 0.981173
 
+[node name="wanderer_placer" type="Node2D" parent="tablero"]
+modulate = Color(1, 1, 1, 0.529412)
+position = Vector2(208, 32)
+
 [node name="Button2" type="Button" parent="tablero"]
 visible = false
+layout_mode = 0
 offset_left = 384.0
 offset_right = 448.0
 offset_bottom = 64.0
@@ -562,7 +563,7 @@ curve = SubResource("Curve2D_x1wqi")
 [node name="zombi_001" parent="Path2D4" instance=ExtResource("5_38bir")]
 position = Vector2(1055.2, 480)
 
-[connection signal="pressed" from="tablero/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="tablero/wanderer_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="tablero/Button2" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Control/HBoxContainer/VBoxContainer/PanelContainer" to="Control/HBoxContainer/VBoxContainer/PanelContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Control/HBoxContainer/VBoxContainer/PanelContainer" to="Control/HBoxContainer/VBoxContainer/PanelContainer" method="_on_mouse_exited"]

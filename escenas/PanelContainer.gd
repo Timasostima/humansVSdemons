@@ -8,17 +8,21 @@ func _ready():
 	self_modulate = "ffffff00"
 
 func _process(_delta):
-	conteo = $Marker2D.get_child_count()
+	var conteo = $Marker2D.get_child_count()
+	
 	if conteo == 1:
 		construccion = false
-	if construccion == true :
-		if Global.comprovacion == true:
-				if Input.is_action_just_pressed("click"):
-					if conteo == 0:
-						var defendr = defenders.instantiate()
-						$Marker2D.add_child(defendr)
-						construccion = false
-						get_tree().get_nodes_in_group("nivel")[0]._reset()
+
+	elif construccion and Global.comprovacion and Global.modo_compra:
+		if Input.is_action_just_pressed("click") and conteo == 0:
+			Global.modo_compra = false
+			var defender = defenders.instantiate()
+			$Marker2D.add_child(defender)
+			construccion = false
+			
+			var level = get_tree().get_nodes_in_group("nivel")
+			if level.size() > 0:
+				level[0]._reset_placer()
 
 func _on_mouse_entered():
 	if conteo ==0 :
