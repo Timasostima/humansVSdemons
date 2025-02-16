@@ -1,0 +1,291 @@
+[gd_scene load_steps=2 format=3 uid="uid://btoos0ol40lk2"]
+
+[ext_resource type="Script" path="res://escenas/ubicaciones.gd" id="1_lu3ig"]
+
+[node name="ubicaciones" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 952.0
+offset_bottom = 620.0
+script = ExtResource("1_lu3ig")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 24.0
+offset_right = 253.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer" to="." method="_on_center_container_mouse_exited"]
