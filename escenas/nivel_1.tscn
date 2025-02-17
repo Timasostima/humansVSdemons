@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://background.tscn" id="2_6sp3d"]
 [ext_resource type="Script" path="res://escenas/PanelContainer.gd" id="4_4pv8o"]
 [ext_resource type="Texture2D" uid="uid://stvstp7vbwqj" path="res://img/Wanderer Magican/Hurt.png" id="4_3050e"]
-[ext_resource type="PackedScene" uid="uid://dkmdhierrhn6o" path="res://escenas/zombi_001.tscn" id="5_38bir"]
+[ext_resource type="Script" path="res://escenas/Paths.gd" id="5_37qd8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4soas"]
 atlas = ExtResource("4_3050e")
@@ -525,39 +525,24 @@ script = ExtResource("4_4pv8o")
 [node name="Marker2D" type="Marker2D" parent="DefenderGrid/HBoxContainer/VBoxContainer9/PanelContainer4"]
 position = Vector2(40, 50)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Paths" type="Node2D" parent="."]
+script = ExtResource("5_37qd8")
+
+[node name="Path1" type="Path2D" parent="Paths"]
 position = Vector2(-16, 80)
 curve = SubResource("Curve2D_0vxag")
 
-[node name="zombi_001" parent="Path2D" instance=ExtResource("5_38bir")]
-position = Vector2(1040, 168)
-progress = 0.0
-loop = false
-
-[node name="_Timer_175918" type="Timer" parent="Path2D/zombi_001"]
-wait_time = 0.2
-one_shot = true
-
-[node name="Path2D2" type="Path2D" parent="."]
+[node name="Path2" type="Path2D" parent="Paths"]
 position = Vector2(-16, 80)
 curve = SubResource("Curve2D_8sw68")
 
-[node name="zombi_001" parent="Path2D2" instance=ExtResource("5_38bir")]
-position = Vector2(1047.19, 272)
-
-[node name="Path2D3" type="Path2D" parent="."]
+[node name="Path3" type="Path2D" parent="Paths"]
 position = Vector2(-16, 80)
 curve = SubResource("Curve2D_x3rch")
 
-[node name="zombi_001" parent="Path2D3" instance=ExtResource("5_38bir")]
-position = Vector2(1055.2, 376)
-
-[node name="Path2D4" type="Path2D" parent="."]
+[node name="Path4" type="Path2D" parent="Paths"]
 position = Vector2(-16, 80)
 curve = SubResource("Curve2D_x1wqi")
-
-[node name="zombi_001" parent="Path2D4" instance=ExtResource("5_38bir")]
-position = Vector2(1055.2, 480)
 
 [connection signal="pressed" from="shop/wanderer/wanderer_button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="DefenderGrid/HBoxContainer/VBoxContainer/PanelContainer" to="DefenderGrid/HBoxContainer/VBoxContainer/PanelContainer" method="_on_mouse_entered"]

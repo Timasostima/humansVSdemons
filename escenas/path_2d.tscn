@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8f7q15tbkqfd"]
 
-[ext_resource type="PackedScene" uid="uid://dkmdhierrhn6o" path="res://escenas/zombi_001.tscn" id="1_cofwd"]
+[ext_resource type="PackedScene" uid="uid://dkmdhierrhn6o" path="res://escenas/demon.tscn" id="1_cofwd"]
 
 [sub_resource type="Curve2D" id="Curve2D_0vxag"]
 _data = {

@@ -1,60 +1,60 @@
 [gd_scene load_steps=21 format=3 uid="uid://dkmdhierrhn6o"]
 
-[ext_resource type="Script" path="res://escenas/zombi_001.gd" id="1_rquy6"]
-[ext_resource type="Texture2D" uid="uid://dc6wcshvq1hyu" path="res://img/yokai_1/Walk.png" id="2_jc5w3"]
-[ext_resource type="Texture2D" uid="uid://bjapgmhjv872p" path="res://img/yokai_1/Attack_2.png" id="3_pi2yl"]
-[ext_resource type="Texture2D" uid="uid://cqm1r007oarkn" path="res://img/yokai_1/Dead.png" id="4_atb5k"]
+[ext_resource type="Script" path="res://escenas/demon.gd" id="1_ug2k6"]
+[ext_resource type="Texture2D" uid="uid://dc6wcshvq1hyu" path="res://img/yokai_1/Walk.png" id="2_orqfe"]
+[ext_resource type="Texture2D" uid="uid://bjapgmhjv872p" path="res://img/yokai_1/Attack_2.png" id="3_a5sd7"]
+[ext_resource type="Texture2D" uid="uid://cqm1r007oarkn" path="res://img/yokai_1/Dead.png" id="4_iqkvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4ggs"]
-atlas = ExtResource("2_jc5w3")
+atlas = ExtResource("2_orqfe")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrqyc"]
-atlas = ExtResource("2_jc5w3")
+atlas = ExtResource("2_orqfe")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8tyj"]
-atlas = ExtResource("2_jc5w3")
+atlas = ExtResource("2_orqfe")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4wux"]
-atlas = ExtResource("2_jc5w3")
+atlas = ExtResource("2_orqfe")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41x0q"]
-atlas = ExtResource("2_jc5w3")
+atlas = ExtResource("2_orqfe")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67561"]
-atlas = ExtResource("3_pi2yl")
+atlas = ExtResource("3_a5sd7")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmdmv"]
-atlas = ExtResource("3_pi2yl")
+atlas = ExtResource("3_a5sd7")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nnrrt"]
-atlas = ExtResource("3_pi2yl")
+atlas = ExtResource("3_a5sd7")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvtot"]
-atlas = ExtResource("3_pi2yl")
+atlas = ExtResource("3_a5sd7")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcmi2"]
-atlas = ExtResource("4_atb5k")
+atlas = ExtResource("4_iqkvy")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3ove"]
-atlas = ExtResource("4_atb5k")
+atlas = ExtResource("4_iqkvy")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q18y"]
-atlas = ExtResource("4_atb5k")
+atlas = ExtResource("4_iqkvy")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohgd1"]
-atlas = ExtResource("4_atb5k")
+atlas = ExtResource("4_iqkvy")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sk6ut"]
@@ -123,7 +123,7 @@ size = Vector2(23.5, 52)
 [node name="Demon" type="PathFollow2D"]
 progress = 1.0
 rotates = false
-script = ExtResource("1_rquy6")
+script = ExtResource("1_ug2k6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
