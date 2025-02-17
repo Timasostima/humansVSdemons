@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Humans vs Demons"
-run/main_scene="res://escenas/nivel_1.tscn"
+run/main_scene="res://escenas/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://escenas/Global.gd"
 
 [dotnet]
 
