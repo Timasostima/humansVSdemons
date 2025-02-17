@@ -3,20 +3,18 @@ extends Node2D
 var demon = preload("res://escenas/demon.tscn")
 
 func _ready():
-	var paths = get_children() # Get all Path2D nodes
+	var paths = get_children()
 	var num_zombies = 80
 	
 	for i in range(num_zombies):
 		
-		var random_path = paths.pick_random() # Select a random Path2D
+		var random_path = paths.pick_random()
 		duplicate_zombie(random_path)
 		
 		await get_tree().create_timer(0.3).timeout
 
 func duplicate_zombie(path_node: Path2D):
+	var new_demon = demon.instantiate()
+	path_node.add_child(new_demon)
 
-	var d2 = demon.instantiate()
-	path_node.add_child(d2)
-
-	# Ensure it starts at the beginning of the path
-	d2.progress_ratio = 0.0
+	new_demon.progress_ratio = 0.0

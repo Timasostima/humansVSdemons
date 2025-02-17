@@ -2,11 +2,10 @@ extends Node2D
 
 var defenders = preload("res://escenas/defender.tscn")
 var defs_count = 0
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$shop/wanderer/wanderer_placer.global_position = get_global_mouse_position()
 	
