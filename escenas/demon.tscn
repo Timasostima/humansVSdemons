@@ -136,12 +136,12 @@ frame = 3
 frame_progress = 0.0190469
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["zombie"]]
+[node name="hitbox" type="Area2D" parent="." groups=["zombie"]]
 scale = Vector2(2, 2)
 collision_layer = 9
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="hitbox_collision" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-8.25, 0)
 shape = SubResource("RectangleShape2D_gwuo3")
 
@@ -152,5 +152,5 @@ position = Vector2(-45.25, -10)
 shape = SubResource("RectangleShape2D_uv8o5")
 disabled = true
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="hitbox" to="." method="_on_area_2d_area_exited"]

@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 var velocidad = 0.05
-var vida = 10
+var vida = 1
 var attacking = false  # Track if it's currently attacking
 var target_in_area = false  # Track if the plant is still inside
 
@@ -13,6 +13,7 @@ func _process(delta):
 		progress_ratio += velocidad * delta
 
 	if vida <= 0:
+		$hitbox/hitbox_collision.disabled = true
 		$AnimatedSprite2D.play("dead")
 		await $AnimatedSprite2D.animation_finished
 		queue_free()
