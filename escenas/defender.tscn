@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bedla6o5wkmgm"]
 
-[ext_resource type="Script" path="res://escenas/planta.gd" id="1_8nqr7"]
+[ext_resource type="Script" path="res://escenas/defender.gd" id="1_07mhe"]
 [ext_resource type="Texture2D" uid="uid://d22g58xubb1dd" path="res://img/Wanderer Magican/Attack_2.png" id="2_e7kja"]
 [ext_resource type="Texture2D" uid="uid://hbytdjjaum8y" path="res://img/Wanderer Magican/Dead.png" id="3_dvn5k"]
 [ext_resource type="Texture2D" uid="uid://gcdnn01t2a8a" path="res://img/Wanderer Magican/Idle.png" id="3_qiqtb"]
@@ -37,7 +37,7 @@ region = Rect2(768, 0, 128, 128)
 atlas = ExtResource("2_e7kja")
 region = Rect2(896, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cdl2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0tuq"]
 atlas = ExtResource("2_e7kja")
 region = Rect2(1024, 0, 128, 128)
 
@@ -117,10 +117,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_7hutj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8cdl2")
+"texture": SubResource("AtlasTexture_y0tuq")
 }],
 "loop": false,
-"name": &"atacar",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -176,22 +176,20 @@ size = Vector2(10.5, 33.3761)
 [node name="defender" type="Node2D" groups=["planta"]]
 position = Vector2(-17, -10)
 scale = Vector2(2.40696, 2.40696)
-script = ExtResource("1_8nqr7")
+script = ExtResource("1_07mhe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(15.5, -16.5)
 scale = Vector2(0.560001, 0.560001)
 sprite_frames = SubResource("SpriteFrames_xmit4")
-animation = &"dead"
+animation = &"attack"
 
-[node name="Area2D" type="Area2D" parent="." groups=["planta"]]
+[node name="hitbox_area" type="Area2D" parent="." groups=["planta"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="hitbox" type="CollisionShape2D" parent="hitbox_area"]
 position = Vector2(12.25, 2.31196)
 shape = SubResource("RectangleShape2D_voj60")
-
-[node name="Timer" type="Timer" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false
@@ -203,6 +201,5 @@ collide_with_bodies = false
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(14.5, -2)
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="area_entered" from="hitbox_area" to="." method="_on_area_2d_area_entered"]

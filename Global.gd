@@ -1,5 +1,5 @@
 extends Node
 
 var ubicacion = Vector2(0,0)
-var comprovacion = false
-var modo_compra = false
+var comprobation_mode = false
+var buyer_mode = false
