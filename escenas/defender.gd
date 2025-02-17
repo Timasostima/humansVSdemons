@@ -6,6 +6,7 @@ var vida = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$hitbox_area/hitbox.disabled = true
 	$AnimatedSprite2D.play("idle")
 
 
@@ -16,6 +17,8 @@ func _process(_delta):
 		$AnimatedSprite2D.play("dead")
 		await $AnimatedSprite2D.animation_finished
 		$".".queue_free()
+	elif can_attack:
+		$hitbox_area/hitbox.disabled = false
 	detect_zombie()
 
 func _on_area_2d_area_entered(area):

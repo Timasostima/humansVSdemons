@@ -120,7 +120,7 @@ size = Vector2(17.5, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv8o5"]
 size = Vector2(23.5, 52)
 
-[node name="zombi_001" type="PathFollow2D"]
+[node name="Demon" type="PathFollow2D"]
 progress = 1.0
 rotates = false
 script = ExtResource("1_rquy6")

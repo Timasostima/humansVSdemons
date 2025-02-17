@@ -187,7 +187,7 @@ animation = &"attack"
 
 [node name="hitbox_area" type="Area2D" parent="." groups=["planta"]]
 
-[node name="hitbox" type="CollisionShape2D" parent="hitbox_area"]
+[node name="hitbox" type="CollisionShape2D" parent="hitbox_area" groups=["hitbox"]]
 position = Vector2(12.25, 2.31196)
 shape = SubResource("RectangleShape2D_voj60")
 
