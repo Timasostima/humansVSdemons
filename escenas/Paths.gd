@@ -4,7 +4,7 @@ var demon = preload("res://escenas/demon.tscn")
 
 func _ready():
 	var paths = get_children()
-	var num_zombies = 80
+	var num_zombies = 10
 	
 	for i in range(num_zombies):
 		

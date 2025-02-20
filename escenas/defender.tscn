@@ -277,10 +277,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voj60"]
 size = Vector2(10.5, 33.3761)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0viht"]
-radius = 12.0484
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnyt1"]
 
-[node name="defender" type="Node2D" groups=["planta"]]
+[node name="defender" type="Node2D"]
 position = Vector2(-17, -10)
 scale = Vector2(2.40696, 2.40696)
 script = ExtResource("1_07mhe")
@@ -290,29 +289,42 @@ texture_filter = 1
 position = Vector2(15.5, -16.5)
 scale = Vector2(0.560001, 0.560001)
 sprite_frames = SubResource("SpriteFrames_xmit4")
-animation = &"long_attack"
+animation = &"short_attack"
 
-[node name="hitbox_area" type="Area2D" parent="." groups=["planta"]]
+[node name="hitboxArea" type="Area2D" parent="." groups=["ally"]]
+position = Vector2(11.6329, 2.49277)
 
-[node name="hitbox" type="CollisionShape2D" parent="hitbox_area" groups=["ally"]]
-position = Vector2(12.25, 2.31196)
+[node name="hitbox" type="CollisionShape2D" parent="hitboxArea" groups=["ally"]]
+position = Vector2(0.415462, 2.38419e-07)
 shape = SubResource("RectangleShape2D_voj60")
 
-[node name="short_attack_area" type="Area2D" parent="."]
-position = Vector2(28.6669, -2.49277)
-scale = Vector2(1, 1)
+[node name="shortAttackArea" type="Area2D" parent="."]
+position = Vector2(27.8359, -4.57008)
+scale = Vector2(0.916907, 1)
 
-[node name="short_attack" type="CollisionShape2D" parent="short_attack_area"]
-shape = SubResource("CircleShape2D_0viht")
+[node name="attackArea" type="CollisionShape2D" parent="shortAttackArea" groups=["ally"]]
+position = Vector2(1.90735e-06, -9.53674e-07)
+rotation = -1.57448
+shape = SubResource("CapsuleShape2D_nnyt1")
+disabled = true
 
 [node name="long_attack" type="RayCast2D" parent="."]
+position = Vector2(7.06285, 0)
 target_position = Vector2(400, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="short_attack" type="RayCast2D" parent="."]
+position = Vector2(7.06285, -4.57008)
+target_position = Vector2(31.9906, 0)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(14.5, -2)
+scale = Vector2(1, 1)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="area_entered" from="hitbox_area" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="shortAttackArea" to="." method="_on_short_attack_area_area_entered"]

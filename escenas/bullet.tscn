@@ -68,7 +68,7 @@ script = ExtResource("1_r6pty")
 texture_filter = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_gvrrw")
-animation = &"cast_animation"
+animation = &"fly_animation"
 autoplay = "cast_animation"
 
 [node name="Area2D" type="Area2D" parent="." groups=["bala"]]

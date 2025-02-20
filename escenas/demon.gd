@@ -21,15 +21,13 @@ func _process(delta):
 		queue_free()
 
 func _on_area_2d_area_entered(area):
-	print("a")
-	if area.is_in_group("planta"):
-		print("b")
+	if area.is_in_group("ally"):
 		target_in_area = true
 		if not attacking:
 			start_attacking(area)
 
 func _on_area_2d_area_exited(area):
-	if area.is_in_group("planta"):
+	if area.is_in_group("ally"):
 		target_in_area = false
 		if attacking:
 			stop_attacking()
