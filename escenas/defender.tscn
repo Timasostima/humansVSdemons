@@ -324,7 +324,6 @@ collide_with_bodies = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(14.5, -2)
-scale = Vector2(1, 1)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="shortAttackArea" to="." method="_on_short_attack_area_area_entered"]

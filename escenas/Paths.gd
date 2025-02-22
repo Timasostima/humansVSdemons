@@ -4,14 +4,12 @@ var demon = preload("res://escenas/demon.tscn")
 
 func _ready():
 	var paths = get_children()
-	var num_zombies = 10
 	
-	for i in range(num_zombies):
-		
+	for i in range(Global.zombie_counter):
 		var random_path = paths.pick_random()
 		duplicate_zombie(random_path)
 		
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.6).timeout
 
 func duplicate_zombie(path_node: Path2D):
 	var new_demon = demon.instantiate()

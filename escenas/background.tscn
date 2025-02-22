@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr2ijlm44jkiw"]
+[gd_scene load_steps=9 format=3 uid="uid://dr2ijlm44jkiw"]
 
 [ext_resource type="Texture2D" uid="uid://bcilfrbincf7g" path="res://img/background/1.png" id="1_6il5n"]
 [ext_resource type="Texture2D" uid="uid://lp2enhmeqen1" path="res://img/background/2.png" id="2_o73ww"]
@@ -7,37 +7,50 @@
 [ext_resource type="Texture2D" uid="uid://tsw03dk10bqg" path="res://img/background/5.png" id="5_wyybp"]
 [ext_resource type="Texture2D" uid="uid://dtgad4c615p81" path="res://img/background/terrace.png" id="6_nf3wa"]
 
+[sub_resource type="Animation" id="Animation_q6rg2"]
+resource_name = "back"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpafx"]
+_data = {
+"back": SubResource("Animation_q6rg2")
+}
+
 [node name="fondo" type="Node2D"]
-position = Vector2(718, 348)
-scale = Vector2(1.02, 1.05333)
-
-[node name="1" type="Sprite2D" parent="."]
-position = Vector2(2.48999, 66.773)
-scale = Vector2(0.369073, 0.369073)
-texture = ExtResource("1_6il5n")
-
-[node name="2" type="Sprite2D" parent="."]
-position = Vector2(2.48999, 66.773)
-scale = Vector2(0.369073, 0.369073)
-texture = ExtResource("2_o73ww")
-
-[node name="3" type="Sprite2D" parent="."]
-position = Vector2(2.48999, 66.773)
-scale = Vector2(0.369073, 0.369073)
-texture = ExtResource("3_4drs0")
+position = Vector2(704, 368)
+scale = Vector2(1, 1.032)
 
 [node name="4" type="Sprite2D" parent="."]
-position = Vector2(2.48999, 66.773)
+visible = false
+position = Vector2(2.48999, -269.621)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("4_xbul6")
 
+[node name="3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.96078, -307.596)
+scale = Vector2(0.369073, 0.369073)
+texture = ExtResource("3_4drs0")
+
 [node name="5" type="Sprite2D" parent="."]
-position = Vector2(2.48999, 66.773)
+visible = false
+position = Vector2(1.96078, 125.317)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("5_wyybp")
 
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.96075, -94.937)
+scale = Vector2(0.369073, 0.369073)
+texture = ExtResource("2_o73ww")
+
+[node name="1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2.48999, 208.861)
+scale = Vector2(0.369073, 0.369073)
+texture = ExtResource("1_6il5n")
+
 [node name="Terrace" type="Sprite2D" parent="."]
-position = Vector2(1.96078, -18.9874)
+position = Vector2(1.96075, -18.9874)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("6_nf3wa")
 
@@ -45,3 +58,8 @@ texture = ExtResource("6_nf3wa")
 visible = false
 position = Vector2(111.765, 56.9622)
 scale = Vector2(0.369073, 0.369073)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tpafx")
+}

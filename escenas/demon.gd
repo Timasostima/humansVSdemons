@@ -11,6 +11,7 @@ func _ready():
 	$AnimatedSprite2D.play("walk")
 
 func _process(delta):
+	$hpLabel.text = str(hp)
 	if not attacking and $AnimatedSprite2D.animation == "walk":
 		progress_ratio += MOVING_SPEED * delta
 
@@ -60,6 +61,24 @@ func stop_attacking():
 
 func die():
 	$hitbox/hitbox_collision.disabled = true
+	$coin.visible = true
+	$coin.modulate.a = 0.0  # Ensure it starts fully transparent
+	
 	$AnimatedSprite2D.play("die")
+
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property($coin, "modulate:a", 1.0, 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)  # Smoother fade-in
+	tween.tween_property($coin, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)  # Small pop effect
+	tween.tween_property($coin, "position", $coin.position + Vector2(0, -4), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)  # More noticeable upward movement
+	tween.tween_property($AnimatedSprite2D, "modulate:a", 0, 0.8).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween.tween_property($hpLabel, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	
 	await $AnimatedSprite2D.animation_finished
+	await tween.finished	
+	
+	$coin.visible = false
+	
 	queue_free()
+
+

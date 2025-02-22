@@ -46,6 +46,8 @@ animations = [{
 script = ExtResource("1_0umlg")
 
 [node name="background" parent="." instance=ExtResource("2_m7s2f")]
+position = Vector2(632, 352)
+scale = Vector2(0.969, 1)
 
 [node name="shop" type="HBoxContainer" parent="."]
 layout_direction = 2
