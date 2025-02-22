@@ -8,10 +8,12 @@ var attacking = false
 var target_in_area = false  
 
 func _ready():
+	$coin.visible = true
+	$coin.modulate.a = 0.0
 	$AnimatedSprite2D.play("walk")
 
 func _process(delta):
-	$hpLabel.text = str(hp)
+	check_hp()
 	if not attacking and $AnimatedSprite2D.animation == "walk":
 		progress_ratio += MOVING_SPEED * delta
 
@@ -20,6 +22,21 @@ func _process(delta):
 	
 	if progress_ratio >= 1:
 		queue_free()
+
+func check_hp():
+	hp = 0 if hp < 0 else hp
+	$hpLabel.text = str(hp)
+	if hp > 75:
+		$hpLabel.add_theme_color_override("font_color", Color("00ff00"))
+	elif hp > 50:
+		$hpLabel.add_theme_color_override("font_color", Color("66ff00"))
+	elif hp > 25:
+		$hpLabel.add_theme_color_override("font_color", Color("ff6600"))
+	elif hp > 0:
+		$hpLabel.add_theme_color_override("font_color", Color("ff0000"))
+	else:
+		$hpLabel.add_theme_color_override("font_color", Color("000000"))
+
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("ally"):
@@ -61,8 +78,6 @@ func stop_attacking():
 
 func die():
 	$hitbox/hitbox_collision.disabled = true
-	$coin.visible = true
-	$coin.modulate.a = 0.0  # Ensure it starts fully transparent
 	
 	$AnimatedSprite2D.play("die")
 
@@ -70,7 +85,7 @@ func die():
 	tween.set_parallel(true)
 	tween.tween_property($coin, "modulate:a", 1.0, 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)  # Smoother fade-in
 	tween.tween_property($coin, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)  # Small pop effect
-	tween.tween_property($coin, "position", $coin.position + Vector2(0, -4), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)  # More noticeable upward movement
+	tween.tween_property($coin, "position", $coin.position + Vector2(0, -7), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)  # More noticeable upward movement
 	tween.tween_property($AnimatedSprite2D, "modulate:a", 0, 0.8).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	tween.tween_property($hpLabel, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
@@ -80,5 +95,7 @@ func die():
 	$coin.visible = false
 	
 	queue_free()
+	Global.money += 10
+	
 
 

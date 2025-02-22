@@ -18,6 +18,8 @@ func _process(_delta):
 		if Input.is_action_just_pressed("click") and count == 0:
 			Global.buyer_mode = false
 			var defender = defender_scene.instantiate()
+			defender.get_node("shadow").visible = true
+			defender.get_node("hpLabel").visible = true
 			$Marker2D.add_child(defender)
 			$Marker2D.get_child(0).can_attack = true
 			is_building = false

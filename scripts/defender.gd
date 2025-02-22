@@ -11,6 +11,7 @@ func _ready():
 	$shortAttackArea/attackArea.set_deferred("disabled", true)
 
 func _process(_delta):
+	check_hp()
 	if hp <= 0:
 		$hitboxArea/hitbox.set_deferred("disabled", true)
 		$AnimatedSprite2D.play("dead")
@@ -19,6 +20,20 @@ func _process(_delta):
 	elif can_attack:
 		$hitboxArea/hitbox.set_deferred("disabled", false)
 	detect_demon()
+
+func check_hp():
+	hp = 0 if hp < 0 else hp
+	$hpLabel.text = str(hp)
+	if hp > 75:
+		$hpLabel.add_theme_color_override("font_color", Color("00ff00"))
+	elif hp > 50:
+		$hpLabel.add_theme_color_override("font_color", Color("66ff00"))
+	elif hp > 25:
+		$hpLabel.add_theme_color_override("font_color", Color("ff6600"))
+	elif hp > 0:
+		$hpLabel.add_theme_color_override("font_color", Color("ff0000"))
+	else:
+		$hpLabel.add_theme_color_override("font_color", Color("000000"))
 
 func detect_demon():
 	if $short_attack.is_colliding() and can_attack:

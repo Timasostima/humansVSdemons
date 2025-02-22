@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgkyc1hetfiyo"]
+[gd_scene load_steps=12 format=3 uid="uid://dgkyc1hetfiyo"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_0umlg"]
 [ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://scenes/background.tscn" id="2_m7s2f"]
 [ext_resource type="Texture2D" uid="uid://stvstp7vbwqj" path="res://img/Wanderer Magican/Hurt.png" id="3_gg63t"]
 [ext_resource type="PackedScene" uid="uid://bkc33x7n1uwtq" path="res://scenes/defender_grid.tscn" id="4_goxb2"]
 [ext_resource type="PackedScene" uid="uid://b7jcas0ofxu32" path="res://scenes/paths.tscn" id="5_gj824"]
+[ext_resource type="PackedScene" uid="uid://bdomljfafrmo4" path="res://scenes/coin.tscn" id="6_p0iyk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4soas"]
 atlas = ExtResource("3_gg63t")
@@ -70,6 +71,7 @@ grow_vertical = 2
 color = Color(0.38628, 0.198536, 0.0890691, 1)
 
 [node name="wanderer_button" type="Button" parent="shop/wanderer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 3.0
 offset_top = 3.0
@@ -93,5 +95,10 @@ offset_right = 936.0
 
 [node name="Paths" parent="." instance=ExtResource("5_gj824")]
 position = Vector2(96, 0)
+
+[node name="coin" parent="." instance=ExtResource("6_p0iyk")]
+texture_filter = 2
+position = Vector2(1096, 32)
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="shop/wanderer/wanderer_button" to="." method="_on_button_pressed"]

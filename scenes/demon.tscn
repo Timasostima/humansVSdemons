@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dkmdhierrhn6o"]
+[gd_scene load_steps=23 format=3 uid="uid://dkmdhierrhn6o"]
 
 [ext_resource type="Script" path="res://scripts/demon.gd" id="1_ewpm7"]
 [ext_resource type="Texture2D" uid="uid://bjapgmhjv872p" path="res://img/yokai_1/Attack_2.png" id="2_mdm6w"]
+[ext_resource type="Texture2D" uid="uid://o7isvoto8xm" path="res://img/shadow(2).png" id="2_mi24l"]
 [ext_resource type="Texture2D" uid="uid://cqm1r007oarkn" path="res://img/yokai_1/Dead.png" id="3_17881"]
 [ext_resource type="Texture2D" uid="uid://dc6wcshvq1hyu" path="res://img/yokai_1/Walk.png" id="4_8hn0g"]
-[ext_resource type="Texture2D" uid="uid://b1mbg7fy4hoc7" path="res://img/Coin.png" id="5_xju35"]
+[ext_resource type="PackedScene" uid="uid://bdomljfafrmo4" path="res://scenes/coin.tscn" id="5_s82qb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67561"]
 atlas = ExtResource("2_mdm6w")
@@ -121,53 +122,16 @@ size = Vector2(17.5, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv8o5"]
 size = Vector2(23.5, 52)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3pnux"]
-atlas = ExtResource("5_xju35")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0wim7"]
-atlas = ExtResource("5_xju35")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2y7ui"]
-atlas = ExtResource("5_xju35")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jk8k"]
-atlas = ExtResource("5_xju35")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok7vf"]
-atlas = ExtResource("5_xju35")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h2b2k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3pnux")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0wim7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2y7ui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jk8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ok7vf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [node name="Demon" type="PathFollow2D" groups=["demon"]]
 progress = 1.0
 rotates = false
 script = ExtResource("1_ewpm7")
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(-10, 47)
+scale = Vector2(0.0662469, 0.0662469)
+texture = ExtResource("2_mi24l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -203,33 +167,18 @@ collide_with_bodies = false
 [node name="hpLabel" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.784314)
 texture_filter = 1
-offset_left = -26.0
-offset_top = -64.0
-offset_right = 8.0
-offset_bottom = -41.0
-scale = Vector2(0.8, 0.8)
+offset_left = -27.0
+offset_top = -62.0
+offset_right = 95.0
+offset_bottom = 7.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 50
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="coin" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-15, -43)
-
-[node name="coinAnimation" type="AnimatedSprite2D" parent="coin"]
-texture_filter = 1
-position = Vector2(13, 0)
-sprite_frames = SubResource("SpriteFrames_h2b2k")
-autoplay = "default"
-frame_progress = 0.0247638
-
-[node name="coinLabel" type="Label" parent="coin"]
-texture_filter = 1
-offset_left = -22.0
-offset_top = -12.0
-offset_right = 6.0
-offset_bottom = 11.0
-text = "+10"
+[node name="coin" parent="." instance=ExtResource("5_s82qb")]
+position = Vector2(-8, -40)
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="hitbox" to="." method="_on_area_2d_area_exited"]
