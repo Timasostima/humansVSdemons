@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkc33x7n1uwtq"]
 
-[ext_resource type="Script" path="res://escenas/PanelContainer.gd" id="1_xhyd2"]
+[ext_resource type="Script" path="res://scripts/PanelContainer.gd" id="1_xhyd2"]
 
 [node name="DefenderGrid" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ offset_right = 976.0
 offset_bottom = 632.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]

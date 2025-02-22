@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://bedla6o5wkmgm"]
 
-[ext_resource type="Script" path="res://escenas/defender.gd" id="1_07mhe"]
+[ext_resource type="Script" path="res://scripts/defender.gd" id="1_07mhe"]
 [ext_resource type="Texture2D" uid="uid://hbytdjjaum8y" path="res://img/Wanderer Magican/Dead.png" id="3_dvn5k"]
 [ext_resource type="Texture2D" uid="uid://gcdnn01t2a8a" path="res://img/Wanderer Magican/Idle.png" id="3_qiqtb"]
 [ext_resource type="Texture2D" uid="uid://cr2rta6k78gi8" path="res://img/Wanderer Magican/Magic_sphere.png" id="4_qto3y"]
@@ -280,26 +280,26 @@ size = Vector2(10.5, 33.3761)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnyt1"]
 
 [node name="defender" type="Node2D"]
-position = Vector2(-17, -10)
+position = Vector2(-6, -10)
 scale = Vector2(2.40696, 2.40696)
 script = ExtResource("1_07mhe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(15.5, -16.5)
+position = Vector2(8.41958, -16.5081)
 scale = Vector2(0.560001, 0.560001)
 sprite_frames = SubResource("SpriteFrames_xmit4")
 animation = &"short_attack"
 
 [node name="hitboxArea" type="Area2D" parent="." groups=["ally"]]
-position = Vector2(11.6329, 2.49277)
+position = Vector2(4.55248, 2.48464)
 
 [node name="hitbox" type="CollisionShape2D" parent="hitboxArea" groups=["ally"]]
 position = Vector2(0.415462, 2.38419e-07)
 shape = SubResource("RectangleShape2D_voj60")
 
 [node name="shortAttackArea" type="Area2D" parent="."]
-position = Vector2(27.8359, -4.57008)
+position = Vector2(20.7555, -4.57821)
 scale = Vector2(0.916907, 1)
 
 [node name="attackArea" type="CollisionShape2D" parent="shortAttackArea" groups=["ally"]]
@@ -309,21 +309,21 @@ shape = SubResource("CapsuleShape2D_nnyt1")
 disabled = true
 
 [node name="long_attack" type="RayCast2D" parent="."]
-position = Vector2(7.06285, 0)
+position = Vector2(-0.0175672, -0.00812717)
 target_position = Vector2(400, 0)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="short_attack" type="RayCast2D" parent="."]
-position = Vector2(7.06285, -4.57008)
+position = Vector2(-0.0175672, -4.57821)
 target_position = Vector2(31.9906, 0)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(14.5, -2)
+position = Vector2(7.41958, -2.00813)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="shortAttackArea" to="." method="_on_short_attack_area_area_entered"]

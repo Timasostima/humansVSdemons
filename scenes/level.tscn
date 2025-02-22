@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgkyc1hetfiyo"]
 
-[ext_resource type="Script" path="res://escenas/level.gd" id="1_0umlg"]
-[ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://escenas/background.tscn" id="2_m7s2f"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_0umlg"]
+[ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://scenes/background.tscn" id="2_m7s2f"]
 [ext_resource type="Texture2D" uid="uid://stvstp7vbwqj" path="res://img/Wanderer Magican/Hurt.png" id="3_gg63t"]
-[ext_resource type="PackedScene" uid="uid://bkc33x7n1uwtq" path="res://defender_grid.tscn" id="4_goxb2"]
-[ext_resource type="PackedScene" uid="uid://b7jcas0ofxu32" path="res://paths.tscn" id="5_gj824"]
+[ext_resource type="PackedScene" uid="uid://bkc33x7n1uwtq" path="res://scenes/defender_grid.tscn" id="4_goxb2"]
+[ext_resource type="PackedScene" uid="uid://b7jcas0ofxu32" path="res://scenes/paths.tscn" id="5_gj824"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4soas"]
 atlas = ExtResource("3_gg63t")
@@ -46,8 +46,8 @@ animations = [{
 script = ExtResource("1_0umlg")
 
 [node name="background" parent="." instance=ExtResource("2_m7s2f")]
-position = Vector2(632, 352)
-scale = Vector2(0.969, 1)
+position = Vector2(648, 360)
+scale = Vector2(0.94, 0.97)
 
 [node name="shop" type="HBoxContainer" parent="."]
 layout_direction = 2
@@ -88,7 +88,10 @@ modulate = Color(1, 1, 1, 0.529412)
 position = Vector2(34.7499, 35)
 
 [node name="DefenderGrid" parent="." instance=ExtResource("4_goxb2")]
+offset_left = 208.0
+offset_right = 936.0
 
 [node name="Paths" parent="." instance=ExtResource("5_gj824")]
+position = Vector2(96, 0)
 
 [connection signal="pressed" from="shop/wanderer/wanderer_button" to="." method="_on_button_pressed"]

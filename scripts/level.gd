@@ -1,6 +1,6 @@
 extends Node2D
 
-var defenders = preload("res://escenas/defender.tscn")
+var defenders = preload("res://scenes/defender.tscn")
 var defs_count = 0
 
 func _ready():

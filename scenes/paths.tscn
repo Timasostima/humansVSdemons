@@ -1,28 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7jcas0ofxu32"]
 
-[ext_resource type="Script" path="res://escenas/Paths.gd" id="1_s2ker"]
+[ext_resource type="Script" path="res://scripts/Paths.gd" id="1_s2ker"]
 
 [sub_resource type="Curve2D" id="Curve2D_0vxag"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1040, 168, 0, 0, 0, 0, 216, 168)
+"points": PackedVector2Array(0, 0, 0, 0, 1040, 168, 0, 0, 0, 0, 80, 168)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_8sw68"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1048, 272, 0, 0, 0, 0, 224, 272)
+"points": PackedVector2Array(0, 0, 0, 0, 1048, 272, 0, 0, 0, 0, 80, 272)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_x3rch"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1056, 376, 0, 0, 0, 0, 216, 376)
+"points": PackedVector2Array(0, 0, 0, 0, 1056, 376, 0, 0, 0, 0, 80, 376)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_x1wqi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 216, 480)
+"points": PackedVector2Array(0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 80, 480)
 }
 point_count = 2
 

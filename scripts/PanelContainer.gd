@@ -1,6 +1,6 @@
 extends PanelContainer
 
-var defender_scene = preload("res://escenas/defender.tscn")
+var defender_scene = preload("res://scenes/defender.tscn")
 var is_building = false
 var count = 0
 

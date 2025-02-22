@@ -1,7 +1,7 @@
 extends Node2D
 
 var can_attack = false
-var bullet = preload("res://escenas/bullet.tscn")
+var bullet = preload("res://scenes/bullet.tscn")
 var hp = 100
 const short_atk_dmg = 35
 

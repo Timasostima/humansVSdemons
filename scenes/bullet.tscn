@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cnydcwto7v1i2"]
 
-[ext_resource type="Script" path="res://escenas/bullet.gd" id="1_r6pty"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_r6pty"]
 [ext_resource type="Texture2D" uid="uid://comqa7sdxjofl" path="res://img/Wanderer Magican/Charge_2.png" id="2_mvd0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbr8b"]

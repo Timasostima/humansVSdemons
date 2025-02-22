@@ -1,6 +1,6 @@
 extends Node2D
 
-var demon = preload("res://escenas/demon.tscn")
+var demon = preload("res://scenes/demon.tscn")
 
 func _ready():
 	var paths = get_children()
