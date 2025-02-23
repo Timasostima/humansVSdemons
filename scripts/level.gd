@@ -40,9 +40,10 @@ func show_end_screen():
 
 
 
-	# Create and add end screen UI
+	# Instantiate the end screen UI
 	var end_screen_instance = end_screen.instantiate()
 	add_child(end_screen_instance)
+
 	
 	# Set the final results text
 	#end_screen_instance.get_node("ResultLabel").text = "Game Over! You earned " + str(Global.money) + " coins."

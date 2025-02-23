@@ -18,65 +18,65 @@ size_flags_vertical = 3
 script = ExtResource("1_ah431")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0.808998, 0.808998, 0.808998, 0.901961)
 layout_mode = 0
 offset_left = -28.0
 offset_top = -40.0
 offset_right = 12.0
 scale = Vector2(32.4743, 19.1569)
-color = Color(0.481789, 0.481789, 0.481789, 1)
+color = Color(0.813258, 0.813258, 0.813258, 0.317647)
 
-[node name="Node2D2" type="Node2D" parent="."]
+[node name="failLabel" type="Node2D" parent="."]
 
-[node name="Fail" type="Sprite2D" parent="Node2D2"]
+[node name="Fail" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(170, 64)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail2" type="Sprite2D" parent="Node2D2"]
+[node name="Fail2" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(382, 292)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail3" type="Sprite2D" parent="Node2D2"]
+[node name="Fail3" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(42, 494)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail4" type="Sprite2D" parent="Node2D2"]
+[node name="Fail4" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(854, 10)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail5" type="Sprite2D" parent="Node2D2"]
+[node name="Fail5" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(754, 474)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail6" type="Sprite2D" parent="Node2D2"]
+[node name="Fail6" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(1110, 300)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail7" type="Sprite2D" parent="Node2D2"]
+[node name="Fail7" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(528, 650)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
-[node name="Fail8" type="Sprite2D" parent="Node2D2"]
+[node name="Fail8" type="Sprite2D" parent="failLabel"]
 modulate = Color(1, 1, 1, 0.788235)
 position = Vector2(1206, 622)
 scale = Vector2(0.331761, 0.331761)
 texture = ExtResource("4_jrbb1")
 
 [node name="Node2D" type="Node2D" parent="."]
+process_mode = 3
 position = Vector2(573, 294)
 scale = Vector2(1.27271, 1.27271)
 
@@ -118,3 +118,5 @@ offset_bottom = 35.2855
 scale = Vector2(0.433367, 0.433367)
 theme_override_font_sizes/font_size = 40
 text = "Menu"
+
+[connection signal="pressed" from="Node2D/Node2D/Button" to="." method="_on_button_pressed"]
