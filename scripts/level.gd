@@ -6,8 +6,12 @@ func _ready():
 	pass
 
 func _process(_delta):
+	if Global.hearts_remaining <= 0:
+		return
+	
 	$coin.get_node("coinLabel").text = str(Global.money)
 	$shop/wanderer/wanderer_placer.global_position = get_global_mouse_position()
+	
 	
 func _on_button_pressed():
 	if !Global.buyer_mode:

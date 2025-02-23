@@ -10,6 +10,7 @@ var target_in_area = false
 func _ready():
 	$coin.visible = true
 	$coin.modulate.a = 0.0
+	$coin.get_node("coinLabel").text = "+5"
 	$AnimatedSprite2D.play("walk")
 
 func _process(delta):
@@ -20,7 +21,9 @@ func _process(delta):
 	if hp <= 0:
 		die()
 	
-	if progress_ratio >= 1:
+	if progress_ratio >= 0.99:
+		Global.hearts_remaining -= 1
+		print("Remaining hearts: ", Global.hearts_remaining)
 		queue_free()
 
 func check_hp():
@@ -77,9 +80,9 @@ func stop_attacking():
 	$AnimatedSprite2D.play("walk")
 
 func die():
-	$hitbox/hitbox_collision.disabled = true
-	
+	$hitbox/hitbox_collision.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("die")
+	target_in_area = false
 
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -95,7 +98,7 @@ func die():
 	$coin.visible = false
 	
 	queue_free()
-	Global.money += 10
+	Global.money += 5
 	
 
 

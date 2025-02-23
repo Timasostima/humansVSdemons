@@ -1,11 +1,11 @@
 [gd_scene load_steps=45 format=3 uid="uid://bedla6o5wkmgm"]
 
 [ext_resource type="Script" path="res://scripts/defender.gd" id="1_07mhe"]
+[ext_resource type="Texture2D" uid="uid://o7isvoto8xm" path="res://img/shadow.png" id="2_eex00"]
 [ext_resource type="Texture2D" uid="uid://hbytdjjaum8y" path="res://img/Wanderer Magican/Dead.png" id="3_dvn5k"]
 [ext_resource type="Texture2D" uid="uid://gcdnn01t2a8a" path="res://img/Wanderer Magican/Idle.png" id="3_qiqtb"]
 [ext_resource type="Texture2D" uid="uid://cr2rta6k78gi8" path="res://img/Wanderer Magican/Magic_sphere.png" id="4_qto3y"]
 [ext_resource type="Texture2D" uid="uid://c0asys8bg5pqj" path="res://img/Wanderer Magican/Attack_1.png" id="5_ryjx8"]
-[ext_resource type="Texture2D" uid="uid://o7isvoto8xm" path="res://img/shadow(2).png" id="6_4km7m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3dex"]
 atlas = ExtResource("3_dvn5k")
@@ -290,7 +290,7 @@ visible = false
 modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(5.81646, 19.1112)
 scale = Vector2(0.0292144, 0.0292144)
-texture = ExtResource("6_4km7m")
+texture = ExtResource("2_eex00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -1,11 +1,76 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgkyc1hetfiyo"]
+[gd_scene load_steps=23 format=3 uid="uid://dgkyc1hetfiyo"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_0umlg"]
+[ext_resource type="Texture2D" uid="uid://dwfmjocfbkdbp" path="res://img/heart.png" id="2_a4job"]
 [ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://scenes/background.tscn" id="2_m7s2f"]
 [ext_resource type="Texture2D" uid="uid://stvstp7vbwqj" path="res://img/Wanderer Magican/Hurt.png" id="3_gg63t"]
+[ext_resource type="Texture2D" uid="uid://7saed1h34l6h" path="res://img/UI/HealthBarPanel_160x41.png" id="3_q1kui"]
+[ext_resource type="Texture2D" uid="uid://cj3rxaipaulph" path="res://img/heart_lost.png" id="4_2ktpf"]
 [ext_resource type="PackedScene" uid="uid://bkc33x7n1uwtq" path="res://scenes/defender_grid.tscn" id="4_goxb2"]
 [ext_resource type="PackedScene" uid="uid://b7jcas0ofxu32" path="res://scenes/paths.tscn" id="5_gj824"]
 [ext_resource type="PackedScene" uid="uid://bdomljfafrmo4" path="res://scenes/coin.tscn" id="6_p0iyk"]
+[ext_resource type="Texture2D" uid="uid://dhhgjmeihhtcb" path="res://img/UI/ItemBox_24x24.png" id="6_rt7wg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s7fo"]
+atlas = ExtResource("2_a4job")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00c0i"]
+atlas = ExtResource("2_a4job")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvnnl"]
+atlas = ExtResource("2_a4job")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enhbv"]
+atlas = ExtResource("2_a4job")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv0y4"]
+atlas = ExtResource("2_a4job")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ues"]
+atlas = ExtResource("4_2ktpf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewajr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s7fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00c0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvnnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enhbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv0y4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enhbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00c0i")
+}],
+"loop": true,
+"name": &"active",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ues")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4soas"]
 atlas = ExtResource("3_gg63t")
@@ -50,44 +115,218 @@ script = ExtResource("1_0umlg")
 position = Vector2(648, 360)
 scale = Vector2(0.94, 0.97)
 
+[node name="HealthBarPanel160x41" type="Sprite2D" parent="."]
+position = Vector2(155, 35)
+scale = Vector2(3.21498, 2.9488)
+texture = ExtResource("3_q1kui")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 5.0
+offset_top = -2.0
+offset_right = 135.0
+offset_bottom = 78.0
+scale = Vector2(1.04902, 1)
+color = Color(0.294087, 0.23888, 0.266728, 1)
+
+[node name="HBoxContainer" type="Node2D" parent="."]
+position = Vector2(6, 4)
+scale = Vector2(0.811197, 0.811197)
+
+[node name="heart" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(27, 43)
+scale = Vector2(3.21329, 3.21329)
+sprite_frames = SubResource("SpriteFrames_ewajr")
+animation = &"dead"
+autoplay = "active"
+
+[node name="heart2" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(82, 43)
+scale = Vector2(3.21329, 3.21329)
+sprite_frames = SubResource("SpriteFrames_ewajr")
+animation = &"active"
+autoplay = "active"
+
+[node name="heart3" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(133, 43)
+scale = Vector2(3.21329, 3.21329)
+sprite_frames = SubResource("SpriteFrames_ewajr")
+animation = &"active"
+autoplay = "active"
+
 [node name="shop" type="HBoxContainer" parent="."]
 layout_direction = 2
-offset_left = 128.0
-offset_right = 178.0
-offset_bottom = 60.0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 388.0
+offset_bottom = 75.0
+scale = Vector2(0.883101, 0.883101)
 size_flags_horizontal = 0
+theme_override_constants/separation = 15
 
 [node name="wanderer" type="Control" parent="shop"]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="shop/wanderer"]
+visible = false
 clip_contents = true
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.38628, 0.198536, 0.0890691, 1)
+color = Color(0.755964, 0.596736, 0.423778, 1)
 
-[node name="wanderer_button" type="Button" parent="shop/wanderer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 67.0
-offset_bottom = 67.0
-flat = true
+[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer"]
+position = Vector2(36, 36)
+scale = Vector2(3.09064, 3.09064)
+texture = ExtResource("6_rt7wg")
 
 [node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer"]
-position = Vector2(35, 35)
-scale = Vector2(1.5119, 2)
+position = Vector2(30, 34)
+scale = Vector2(1.7, 2.248)
 sprite_frames = SubResource("SpriteFrames_q3cr1")
 autoplay = "default"
 
 [node name="wanderer_placer" type="Node2D" parent="shop/wanderer"]
 modulate = Color(1, 1, 1, 0.529412)
-position = Vector2(34.7499, 35)
+light_mask = 524289
+visibility_layer = 524289
+z_index = 1
+position = Vector2(35, 36)
+
+[node name="ColorRect2" type="ColorRect" parent="shop/wanderer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
+
+[node name="coin" parent="shop/wanderer" instance=ExtResource("6_p0iyk")]
+position = Vector2(57, 63)
+scale = Vector2(0.6, 0.6)
+
+[node name="wanderer_button" type="Button" parent="shop/wanderer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 70.0
+offset_bottom = 70.0
+flat = true
+
+[node name="wanderer2" type="Control" parent="shop"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="shop/wanderer2"]
+visible = false
+clip_contents = true
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.755964, 0.596736, 0.423778, 1)
+
+[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer2"]
+position = Vector2(36, 36)
+scale = Vector2(3.09064, 3.09064)
+texture = ExtResource("6_rt7wg")
+
+[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer2"]
+position = Vector2(30, 34)
+scale = Vector2(1.7, 2.248)
+sprite_frames = SubResource("SpriteFrames_q3cr1")
+autoplay = "default"
+
+[node name="wanderer_placer" type="Node2D" parent="shop/wanderer2"]
+modulate = Color(1, 1, 1, 0.529412)
+light_mask = 524289
+visibility_layer = 524289
+z_index = 1
+position = Vector2(35, 36)
+
+[node name="ColorRect2" type="ColorRect" parent="shop/wanderer2"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
+
+[node name="coin" parent="shop/wanderer2" instance=ExtResource("6_p0iyk")]
+position = Vector2(57, 63)
+scale = Vector2(0.6, 0.6)
+
+[node name="wanderer_button" type="Button" parent="shop/wanderer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 70.0
+offset_bottom = 70.0
+flat = true
+
+[node name="wanderer3" type="Control" parent="shop"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="shop/wanderer3"]
+visible = false
+clip_contents = true
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.755964, 0.596736, 0.423778, 1)
+
+[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer3"]
+position = Vector2(36, 36)
+scale = Vector2(3.09064, 3.09064)
+texture = ExtResource("6_rt7wg")
+
+[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer3"]
+position = Vector2(30, 34)
+scale = Vector2(1.7, 2.248)
+sprite_frames = SubResource("SpriteFrames_q3cr1")
+autoplay = "default"
+
+[node name="wanderer_placer" type="Node2D" parent="shop/wanderer3"]
+modulate = Color(1, 1, 1, 0.529412)
+light_mask = 524289
+visibility_layer = 524289
+z_index = 1
+position = Vector2(35, 36)
+
+[node name="ColorRect2" type="ColorRect" parent="shop/wanderer3"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
+
+[node name="coin" parent="shop/wanderer3" instance=ExtResource("6_p0iyk")]
+position = Vector2(57, 63)
+scale = Vector2(0.6, 0.6)
+
+[node name="wanderer_button" type="Button" parent="shop/wanderer3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 70.0
+offset_bottom = 70.0
+flat = true
 
 [node name="DefenderGrid" parent="." instance=ExtResource("4_goxb2")]
 offset_left = 208.0
@@ -98,7 +337,9 @@ position = Vector2(96, 0)
 
 [node name="coin" parent="." instance=ExtResource("6_p0iyk")]
 texture_filter = 2
-position = Vector2(1096, 32)
+position = Vector2(1104, 46)
 scale = Vector2(3, 3)
 
 [connection signal="pressed" from="shop/wanderer/wanderer_button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="shop/wanderer2/wanderer_button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="shop/wanderer3/wanderer_button" to="." method="_on_button_pressed"]

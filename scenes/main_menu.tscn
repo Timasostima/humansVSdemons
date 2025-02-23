@@ -1,0 +1,534 @@
+[gd_scene load_steps=48 format=3 uid="uid://dtnuube0cfl4x"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lkomm"]
+[ext_resource type="PackedScene" uid="uid://dr2ijlm44jkiw" path="res://scenes/background.tscn" id="1_mts81"]
+[ext_resource type="Texture2D" uid="uid://di72ve6bn4e8m" path="res://img/UI/RectangleBox_96x96.png" id="2_6eb25"]
+[ext_resource type="Texture2D" uid="uid://cw7cnjn5raw4x" path="res://img/UI/TopPatternBG_116x67.png" id="3_3wa8e"]
+[ext_resource type="Texture2D" uid="uid://crvqhpqv5viwj" path="res://img/UI/BottomPatternBG_128x112.png" id="4_g40hg"]
+[ext_resource type="Texture2D" uid="uid://cmlfbt8j527f6" path="res://img/UI/BlackBigCircleBoxWithBorder_27x27.png" id="5_vyv4p"]
+[ext_resource type="Texture2D" uid="uid://bu8yv55gsih86" path="res://img/UI/TopPatternPanel_02_33x15.png" id="6_mjuq4"]
+[ext_resource type="Texture2D" uid="uid://cr2rta6k78gi8" path="res://img/Wanderer Magican/Magic_sphere.png" id="7_rh4j8"]
+[ext_resource type="Texture2D" uid="uid://dtu6eowafxw63" path="res://img/yokai_1/Run.png" id="8_pl31t"]
+[ext_resource type="Texture2D" uid="uid://cjr8c353xtprk" path="res://img/Wanderer Magican/Run.png" id="9_6lx1u"]
+[ext_resource type="Texture2D" uid="uid://drwvawhd70gsj" path="res://img/music.png" id="11_5ev5g"]
+[ext_resource type="Texture2D" uid="uid://lkldy8n6wqjs" path="res://img/UI/Button_52x14.png" id="11_c0d3g"]
+[ext_resource type="Texture2D" uid="uid://cty8vnyjoshjq" path="res://img/UI/HighlightSlot_26x26.png" id="11_cvnd1"]
+[ext_resource type="Texture2D" uid="uid://c7gtee0gaq3tj" path="res://img/github.png" id="12_2ry8n"]
+[ext_resource type="Texture2D" uid="uid://b0y4b581io5fu" path="res://img/UI/MenusBox_34x34.png" id="12_pta8w"]
+[ext_resource type="Texture2D" uid="uid://7saed1h34l6h" path="res://img/UI/HealthBarPanel_160x41.png" id="16_mxb5m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gglrd"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dp8s"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwsvg"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c75ob"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k7v7"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igmq4"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is0pd"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62htt"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1etq"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0nlj"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ucgr"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhy7e"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8uij"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwq2f"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nviou"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg2al"]
+atlas = ExtResource("7_rh4j8")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow2nj"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqi4b"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl4pf"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m733"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m74p"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn00u"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex1uq"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcduk"]
+atlas = ExtResource("9_6lx1u")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1j7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gglrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dp8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwsvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c75ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k7v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igmq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is0pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62htt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1etq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0nlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ucgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhy7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8uij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwq2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nviou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg2al")
+}],
+"loop": true,
+"name": &"long_attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow2nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqi4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl4pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m733")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m74p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn00u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex1uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcduk")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore1o"]
+atlas = ExtResource("8_pl31t")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yx5w"]
+atlas = ExtResource("8_pl31t")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu44h"]
+atlas = ExtResource("8_pl31t")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy63h"]
+atlas = ExtResource("8_pl31t")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kpqx"]
+atlas = ExtResource("8_pl31t")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qd1uk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ore1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yx5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu44h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy63h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kpqx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lkomm")
+
+[node name="fondo" parent="." instance=ExtResource("1_mts81")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="frame" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(586, 304)
+scale = Vector2(4.67368, 5.43452)
+texture = ExtResource("2_6eb25")
+
+[node name="topPattern" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(584, 126)
+scale = Vector2(1.65, 1.175)
+texture = ExtResource("3_3wa8e")
+
+[node name="bottomPattern" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(584, 460.5)
+scale = Vector2(0.958333, 1.00893)
+texture = ExtResource("4_g40hg")
+
+[node name="circle3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(381, 66)
+scale = Vector2(1.94207, 1.94207)
+texture = ExtResource("5_vyv4p")
+
+[node name="circle2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(792, 66)
+scale = Vector2(1.94207, 1.94207)
+texture = ExtResource("5_vyv4p")
+
+[node name="circle" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(381, 542.812)
+scale = Vector2(1.94207, 1.94207)
+texture = ExtResource("5_vyv4p")
+
+[node name="circle4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(792, 542.812)
+scale = Vector2(1.94207, 1.94207)
+texture = ExtResource("5_vyv4p")
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+position = Vector2(586, 66)
+
+[node name="TopPatternPanel0233x17" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(117, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x18" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(39, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x16" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(-39.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x15" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(-117.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="Node2D2" type="Node2D" parent="CanvasLayer"]
+position = Vector2(793, 266)
+rotation = 1.5708
+
+[node name="TopPatternPanel0233x19" type="Sprite2D" parent="CanvasLayer/Node2D2"]
+position = Vector2(195, 0.999997)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x17" type="Sprite2D" parent="CanvasLayer/Node2D2"]
+position = Vector2(117, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x18" type="Sprite2D" parent="CanvasLayer/Node2D2"]
+position = Vector2(39, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x16" type="Sprite2D" parent="CanvasLayer/Node2D2"]
+position = Vector2(-39.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x15" type="Sprite2D" parent="CanvasLayer/Node2D2"]
+position = Vector2(-117.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="Node2D3" type="Node2D" parent="CanvasLayer"]
+position = Vector2(382, 266)
+rotation = 1.5708
+
+[node name="TopPatternPanel0233x19" type="Sprite2D" parent="CanvasLayer/Node2D3"]
+position = Vector2(195, 0.999997)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x17" type="Sprite2D" parent="CanvasLayer/Node2D3"]
+position = Vector2(117, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x18" type="Sprite2D" parent="CanvasLayer/Node2D3"]
+position = Vector2(39, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x16" type="Sprite2D" parent="CanvasLayer/Node2D3"]
+position = Vector2(-39.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x15" type="Sprite2D" parent="CanvasLayer/Node2D3"]
+position = Vector2(-117.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="Node2D4" type="Node2D" parent="CanvasLayer"]
+position = Vector2(586, 543)
+
+[node name="TopPatternPanel0233x17" type="Sprite2D" parent="CanvasLayer/Node2D4"]
+position = Vector2(117, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x18" type="Sprite2D" parent="CanvasLayer/Node2D4"]
+position = Vector2(39, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x16" type="Sprite2D" parent="CanvasLayer/Node2D4"]
+position = Vector2(-39.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="TopPatternPanel0233x15" type="Sprite2D" parent="CanvasLayer/Node2D4"]
+position = Vector2(-117.5, 1)
+texture = ExtResource("6_mjuq4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.776471)
+texture_filter = 1
+position = Vector2(510, 188)
+scale = Vector2(1.74318, 1.96129)
+sprite_frames = SubResource("SpriteFrames_d1j7g")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.326211
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.784314)
+texture_filter = 1
+position = Vector2(677, 215)
+scale = Vector2(1.76775, 1.76775)
+sprite_frames = SubResource("SpriteFrames_qd1uk")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.155569
+flip_h = true
+
+[node name="Button52x14" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(584, 442)
+scale = Vector2(3.82692, 5.01786)
+texture = ExtResource("11_c0d3g")
+
+[node name="Node2D5" type="Node2D" parent="CanvasLayer"]
+position = Vector2(585, 451)
+
+[node name="Button52x14" type="Sprite2D" parent="CanvasLayer/Node2D5"]
+position = Vector2(-1.89362, -2.99997)
+scale = Vector2(4.04255, 5.91429)
+texture = ExtResource("11_c0d3g")
+
+[node name="Button" type="Button" parent="CanvasLayer/Node2D5"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -107.0
+offset_top = -45.0
+offset_right = 154.0
+offset_bottom = 46.0
+scale = Vector2(0.807097, 0.910783)
+theme_override_font_sizes/font_size = 60
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D5"]
+offset_left = -108.0
+offset_top = -47.0
+offset_right = 109.0
+offset_bottom = 43.0
+scale = Vector2(0.971915, 0.942282)
+theme_override_font_sizes/font_size = 60
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="highlight" type="Sprite2D" parent="CanvasLayer/Node2D5"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2.00001, -3)
+scale = Vector2(8.5317, 3.58583)
+texture = ExtResource("11_cvnd1")
+
+[node name="music" type="Node2D" parent="."]
+position = Vector2(1163, 580)
+
+[node name="background" type="Sprite2D" parent="music"]
+position = Vector2(-2.00005, -0.999969)
+scale = Vector2(2.67647, 2.67647)
+texture = ExtResource("12_pta8w")
+
+[node name="musicLogo" type="Sprite2D" parent="music"]
+modulate = Color(0.458405, 0.458405, 0.458405, 0.490196)
+position = Vector2(-3.00017, 3.05176e-05)
+scale = Vector2(0.102252, 0.102252)
+texture = ExtResource("11_5ev5g")
+
+[node name="button" type="Button" parent="music"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = -47.0
+offset_right = -40.0
+offset_bottom = -39.0
+scale = Vector2(11.3745, 11.3745)
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="highlight" type="Sprite2D" parent="music"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1.99992, -0.692108)
+scale = Vector2(3.84616, 3.79291)
+texture = ExtResource("11_cvnd1")
+
+[node name="github" type="Node2D" parent="."]
+position = Vector2(1161, 471)
+
+[node name="background" type="Sprite2D" parent="github"]
+position = Vector2(-4.95911e-05, -0.692108)
+scale = Vector2(2.67647, 2.67647)
+texture = ExtResource("12_pta8w")
+
+[node name="githubLogo" type="Sprite2D" parent="github"]
+modulate = Color(1, 1, 0.992157, 0.490196)
+position = Vector2(-4.95911e-05, -1.69214)
+scale = Vector2(0.227432, 0.227432)
+texture = ExtResource("12_2ry8n")
+
+[node name="button" type="Button" parent="github"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -46.0
+offset_top = -46.6921
+offset_right = -38.0
+offset_bottom = -38.6921
+scale = Vector2(11.3745, 11.3745)
+flat = true
+
+[node name="highlight" type="Sprite2D" parent="github"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(7.22408e-05, -0.692108)
+scale = Vector2(3.84616, 3.79291)
+texture = ExtResource("11_cvnd1")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(84, 623)
+scale = Vector2(2.42195, 0.798817)
+
+[node name="Developed By" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(-3.8147e-06, 7.5111)
+scale = Vector2(0.799936, 2.63225)
+texture = ExtResource("16_mxb5m")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.9024
+offset_top = -31.2963
+offset_right = 535.098
+offset_bottom = 137.704
+scale = Vector2(0.143775, 0.342929)
+theme_override_font_sizes/font_size = 60
+text = "Dev. by: Tymur 
+Kulivar Shymanskyi"
+
+[connection signal="focus_entered" from="CanvasLayer/Node2D5/Button" to="." method="_start_entered"]
+[connection signal="focus_exited" from="CanvasLayer/Node2D5/Button" to="." method="_start_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Node2D5/Button" to="." method="_start_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Node2D5/Button" to="." method="_start_exited"]
+[connection signal="pressed" from="CanvasLayer/Node2D5/Button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="music/button" to="." method="_music_entered"]
+[connection signal="focus_exited" from="music/button" to="." method="_music_exited"]
+[connection signal="mouse_entered" from="music/button" to="." method="_music_entered"]
+[connection signal="mouse_exited" from="music/button" to="." method="_music_exited"]
+[connection signal="focus_entered" from="github/button" to="." method="_github_entered"]
+[connection signal="focus_exited" from="github/button" to="." method="_github_exited"]
+[connection signal="mouse_entered" from="github/button" to="." method="_github_entered"]
+[connection signal="mouse_exited" from="github/button" to="." method="_github_exited"]
+[connection signal="pressed" from="github/button" to="." method="_open_github"]

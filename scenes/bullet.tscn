@@ -71,7 +71,7 @@ sprite_frames = SubResource("SpriteFrames_gvrrw")
 animation = &"cast_animation"
 autoplay = "cast_animation"
 
-[node name="Area2D" type="Area2D" parent="." groups=["bala"]]
+[node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(13, 0)

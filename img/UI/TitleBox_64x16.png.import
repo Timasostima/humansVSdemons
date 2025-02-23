@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o7isvoto8xm"
-path="res://.godot/imported/shadow(2).png-a34d75a7cfb1bfa06deb75434acc2594.ctex"
+uid="uid://0k3cdl3axh6p"
+path="res://.godot/imported/TitleBox_64x16.png-7383b9cb64cb82d48972c6e69c4eb8c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/shadow(2).png"
-dest_files=["res://.godot/imported/shadow(2).png-a34d75a7cfb1bfa06deb75434acc2594.ctex"]
+source_file="res://img/UI/TitleBox_64x16.png"
+dest_files=["res://.godot/imported/TitleBox_64x16.png-7383b9cb64cb82d48972c6e69c4eb8c5.ctex"]
 
 [params]
 
