@@ -37,14 +37,11 @@ func check_hp():
 
 func detect_demon():
 	if $short_attack.is_colliding() and can_attack:
-		perform_short_attack()
+			$AnimatedSprite2D.play("short_attack")
 	elif $long_attack.is_colliding() and can_attack:
 		$AnimatedSprite2D.play("long_attack")
 	else:
 		$AnimatedSprite2D.play("idle")
-
-func perform_short_attack():
-	$AnimatedSprite2D.play("short_attack")
 
 func fire_bullet():
 	var new_bullet = bullet.instantiate()

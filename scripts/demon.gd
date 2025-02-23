@@ -5,7 +5,8 @@ const DAMAGE = 15
 
 var hp = 100
 var attacking = false  
-var target_in_area = false  
+var target_in_area = false
+var loot = true
 
 func _ready():
 	$coin.visible = true
@@ -55,7 +56,7 @@ func _on_area_2d_area_exited(area):
 
 func start_attacking(target):
 	attacking = true
-	while target_in_area:
+	while target_in_area and hp > 0:
 		$AnimatedSprite2D.play("attack")
 		$attack/attack_collision.set_deferred("disabled", false)
 
@@ -63,7 +64,7 @@ func start_attacking(target):
 
 		$attack/attack_collision.set_deferred("disabled", true)
 		
-		if is_instance_valid(target):
+		if is_instance_valid(target) and hp > 0:
 			var defender = target.get_parent()
 			defender.hp -= DAMAGE
 			
@@ -81,6 +82,7 @@ func stop_attacking():
 
 func die():
 	$hitbox/hitbox_collision.set_deferred("disabled", true)
+	$attack/attack_collision.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("die")
 	target_in_area = false
 
@@ -98,7 +100,9 @@ func die():
 	$coin.visible = false
 	
 	queue_free()
-	Global.money += 5
+	if loot:
+		Global.money += 5
+		loot = false
 	
 
 
