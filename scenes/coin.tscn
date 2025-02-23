@@ -56,11 +56,11 @@ frame_progress = 0.0247638
 
 [node name="coinLabel" type="Label" parent="."]
 texture_filter = 1
-offset_left = -31.0
-offset_top = -13.0
-offset_right = 56.0
-offset_bottom = 56.0
+offset_left = -36.0
+offset_top = -9.0
+offset_right = 67.0
+offset_bottom = 38.0
 scale = Vector2(0.35, 0.35)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "+10"
 horizontal_alignment = 2

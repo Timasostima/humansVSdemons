@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://n0ircq6u4vr5"
+path="res://.godot/imported/Bruce Forever.ttf-10f3c8721de7979881a70b881b07800a.fontdata"
+
+[deps]
+
+source_file="res://Bruce Forever.ttf"
+dest_files=["res://.godot/imported/Bruce Forever.ttf-10f3c8721de7979881a70b881b07800a.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

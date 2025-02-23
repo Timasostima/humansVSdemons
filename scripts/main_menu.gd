@@ -24,14 +24,14 @@ func _open_github():
 func _start_entered():
 	var tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property($CanvasLayer/Node2D5/highlight, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property($CanvasLayer/Node2D5, "scale", Vector2(1.05, 1.05), 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($menu/startButton/highlight, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($menu/startButton, "scale", Vector2(1.03, 1.06), 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 
 func _start_exited():
 	var tween = create_tween()
 	tween.set_parallel(true)	
-	tween.tween_property($CanvasLayer/Node2D5/highlight, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property($CanvasLayer/Node2D5, "scale", Vector2(1.05, 1.0), 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($menu/startButton/highlight, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($menu/startButton, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	
 func _github_entered():
 	var tween = create_tween()
@@ -48,3 +48,13 @@ func _music_entered():
 func _music_exited():
 	var tween = create_tween()
 	tween.tween_property($music/highlight, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+
+func _on_title_mouse_entered():
+	print("here")
+	var tween = create_tween()
+	tween.tween_property($menu/title, "modulate", Color(1.0, 0.2, 0.2, 0.7), 0.5)
+
+func _on_title_mouse_exited():
+	var tween = create_tween()
+	tween.tween_property($menu/title, "modulate", Color("#fbffb6b3"), 0.5)
