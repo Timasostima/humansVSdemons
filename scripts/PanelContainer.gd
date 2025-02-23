@@ -9,7 +9,7 @@ func _ready():
 	self_modulate = "ffffff00"
 
 func _process(_delta):
-	var count = $Marker2D.get_child_count()
+	count = $Marker2D.get_child_count()
 	
 	if count == 1:
 		can_build = false
@@ -24,21 +24,21 @@ func _process(_delta):
 			$Marker2D.get_child(0).can_attack = true
 			can_build = false
 			Global.placement_check_mode = false
+			count = 1
 			
 			var levels = get_tree().get_nodes_in_group("level")
 			if levels.size() > 0:
 				levels[0]._reset_placer()
 
 func _on_mouse_entered():
-	if count == 0:
+	if count == 0 and Global.buyer_mode:
 		Global.placement_check_mode = true
 		can_build = true
 		Global.location = $Marker2D.global_position
-	self_modulate = "ffffff88"
+		self_modulate = "ffffff88"
 
 func _on_mouse_exited():
-	if count == 0:
-		can_build = false
-		Global.placement_check_mode = false
-		Global.location = get_global_mouse_position()
+	can_build = false
+	Global.placement_check_mode = false
+	Global.location = get_global_mouse_position()
 	self_modulate = "ffffff00"

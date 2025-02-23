@@ -1,17 +1,21 @@
 extends Node2D
 
 var defenders = preload("res://scenes/defender.tscn")
+var end_screen = preload("res://scenes/end_menu.tscn")  # Load the end screen
 
 func _ready():
 	pass
 
 func _process(_delta):
 	if Global.hearts_remaining <= 0:
+		show_end_screen()  # Show results instead of quitting
 		return
 	
+	# Update coin label
 	$coin.get_node("coinLabel").text = str(Global.money)
-	$shop/wanderer/wanderer_placer.global_position = get_global_mouse_position()
 	
+	# Move placer to mouse position
+	$shop/wanderer/wanderer_placer.global_position = get_global_mouse_position()
 	
 func _on_button_pressed():
 	if !Global.buyer_mode:
@@ -20,4 +24,33 @@ func _on_button_pressed():
 		$shop/wanderer/wanderer_placer.add_child(defendr)
 
 func _reset_placer():
-	$shop/wanderer/wanderer_placer.get_child(0).queue_free()
+	if $shop/wanderer/wanderer_placer.get_child_count() > 0:
+		$shop/wanderer/wanderer_placer.get_child(0).queue_free()
+
+# Function to show end results screen
+func show_end_screen():
+	# Disable game interactions
+	get_tree().paused = true  
+	Global.buyer_mode = false
+	Global.placement_check_mode = false
+	
+	
+	$shop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$DefenderGrid.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+
+
+	# Create and add end screen UI
+	var end_screen_instance = end_screen.instantiate()
+	add_child(end_screen_instance)
+	
+	# Set the final results text
+	#end_screen_instance.get_node("ResultLabel").text = "Game Over! You earned " + str(Global.money) + " coins."
+
+	# Connect restart button to reset the game
+	#end_screen_instance.get_node("RestartButton").connect("pressed", Callable(self, "_restart_game"))
+
+# Function to restart the game
+func _restart_game():
+	get_tree().paused = false  # Resume game
+	get_tree().reload_current_scene()  # Restart scene

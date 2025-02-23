@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcdumqf2bxdh"]
+
+[ext_resource type="Script" path="res://scripts/end_menu.gd" id="1_ah431"]
+[ext_resource type="Texture2D" uid="uid://di72ve6bn4e8m" path="res://img/UI/RectangleBox_96x96.png" id="1_m2tkp"]
+[ext_resource type="Texture2D" uid="uid://lkldy8n6wqjs" path="res://img/UI/Button_52x14.png" id="3_42dpk"]
+[ext_resource type="Texture2D" uid="uid://c6gwyq35fyt8r" path="res://img/fail.png" id="4_jrbb1"]
+
+[node name="endMenu" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ah431")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.808998, 0.808998, 0.808998, 0.901961)
+layout_mode = 0
+offset_left = -28.0
+offset_top = -40.0
+offset_right = 12.0
+scale = Vector2(32.4743, 19.1569)
+color = Color(0.481789, 0.481789, 0.481789, 1)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Fail" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(170, 64)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail2" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(382, 292)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail3" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(42, 494)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail4" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(854, 10)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail5" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(754, 474)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail6" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(1110, 300)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail7" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(528, 650)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Fail8" type="Sprite2D" parent="Node2D2"]
+modulate = Color(1, 1, 1, 0.788235)
+position = Vector2(1206, 622)
+scale = Vector2(0.331761, 0.331761)
+texture = ExtResource("4_jrbb1")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(573, 294)
+scale = Vector2(1.27271, 1.27271)
+
+[node name="RectangleBox96x96" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1.90735e-06, -2)
+scale = Vector2(3.0625, 3.0625)
+texture = ExtResource("1_m2tkp")
+
+[node name="Label" type="Label" parent="Node2D"]
+modulate = Color(1, 0.156863, 0.227451, 1)
+offset_left = -99.7867
+offset_top = -117.858
+offset_right = 301.213
+offset_bottom = -58.8583
+scale = Vector2(0.499199, 0.499199)
+theme_override_font_sizes/font_size = 50
+text = "Game Over"
+
+[node name="Node2D" type="Node2D" parent="Node2D"]
+position = Vector2(-0.785722, 89.5723)
+
+[node name="Button52x14" type="Sprite2D" parent="Node2D/Node2D"]
+position = Vector2(-2.35715, 0.464154)
+scale = Vector2(3.68685, 2.52553)
+texture = ExtResource("3_42dpk")
+
+[node name="Button" type="Button" parent="Node2D/Node2D"]
+offset_left = -97.9286
+offset_top = -17.2859
+offset_right = 93.0714
+offset_bottom = 17.7141
+flat = true
+
+[node name="Label" type="Label" parent="Node2D/Node2D"]
+offset_left = -36.1432
+offset_top = -11.7145
+offset_right = 120.857
+offset_bottom = 35.2855
+scale = Vector2(0.433367, 0.433367)
+theme_override_font_sizes/font_size = 40
+text = "Menu"
