@@ -50,7 +50,6 @@ func _music_exited():
 
 
 func _on_title_mouse_entered():
-	print("here")
 	var tween = create_tween()
 	tween.tween_property($menu/title, "modulate", Color(1.0, 0.2, 0.2, 0.7), 0.5)
 

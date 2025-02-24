@@ -167,161 +167,52 @@ theme_override_constants/separation = 15
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="shop/wanderer"]
-visible = false
+[node name="corners" type="ColorRect" parent="shop/wanderer"]
 clip_contents = true
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.755964, 0.596736, 0.423778, 1)
 
-[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer"]
+[node name="ItemBox" type="Sprite2D" parent="shop/wanderer"]
 position = Vector2(36, 36)
 scale = Vector2(3.09064, 3.09064)
 texture = ExtResource("6_rt7wg")
 
-[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer"]
+[node name="buyAnimation" type="AnimatedSprite2D" parent="shop/wanderer"]
 position = Vector2(30, 34)
 scale = Vector2(1.7, 2.248)
 sprite_frames = SubResource("SpriteFrames_q3cr1")
 autoplay = "default"
 
-[node name="wanderer_placer" type="Node2D" parent="shop/wanderer"]
+[node name="placer" type="Node2D" parent="shop/wanderer"]
 modulate = Color(1, 1, 1, 0.529412)
 light_mask = 524289
 visibility_layer = 524289
 z_index = 1
 position = Vector2(35, 36)
 
-[node name="ColorRect2" type="ColorRect" parent="shop/wanderer"]
+[node name="priceBackground" type="ColorRect" parent="shop/wanderer"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
+offset_left = 37.0
 offset_top = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
+color = Color(0.166579, 0.123256, 0.0134709, 0.941176)
 
 [node name="coin" parent="shop/wanderer" instance=ExtResource("6_p0iyk")]
 position = Vector2(57, 63)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 
-[node name="wanderer_button" type="Button" parent="shop/wanderer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_right = 70.0
-offset_bottom = 70.0
-flat = true
-
-[node name="wanderer2" type="Control" parent="shop"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="shop/wanderer2"]
-visible = false
-clip_contents = true
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.755964, 0.596736, 0.423778, 1)
-
-[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer2"]
-position = Vector2(36, 36)
-scale = Vector2(3.09064, 3.09064)
-texture = ExtResource("6_rt7wg")
-
-[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer2"]
-position = Vector2(30, 34)
-scale = Vector2(1.7, 2.248)
-sprite_frames = SubResource("SpriteFrames_q3cr1")
-autoplay = "default"
-
-[node name="wanderer_placer" type="Node2D" parent="shop/wanderer2"]
-modulate = Color(1, 1, 1, 0.529412)
-light_mask = 524289
-visibility_layer = 524289
-z_index = 1
-position = Vector2(35, 36)
-
-[node name="ColorRect2" type="ColorRect" parent="shop/wanderer2"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
-
-[node name="coin" parent="shop/wanderer2" instance=ExtResource("6_p0iyk")]
-position = Vector2(57, 63)
-scale = Vector2(0.6, 0.6)
-
-[node name="wanderer_button" type="Button" parent="shop/wanderer2"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_right = 70.0
-offset_bottom = 70.0
-flat = true
-
-[node name="wanderer3" type="Control" parent="shop"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="shop/wanderer3"]
-visible = false
-clip_contents = true
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.755964, 0.596736, 0.423778, 1)
-
-[node name="ItemBox24x24" type="Sprite2D" parent="shop/wanderer3"]
-position = Vector2(36, 36)
-scale = Vector2(3.09064, 3.09064)
-texture = ExtResource("6_rt7wg")
-
-[node name="wanderer_buy_anim" type="AnimatedSprite2D" parent="shop/wanderer3"]
-position = Vector2(30, 34)
-scale = Vector2(1.7, 2.248)
-sprite_frames = SubResource("SpriteFrames_q3cr1")
-autoplay = "default"
-
-[node name="wanderer_placer" type="Node2D" parent="shop/wanderer3"]
-modulate = Color(1, 1, 1, 0.529412)
-light_mask = 524289
-visibility_layer = 524289
-z_index = 1
-position = Vector2(35, 36)
-
-[node name="ColorRect2" type="ColorRect" parent="shop/wanderer3"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.305882, 0.235294, 0.0431373, 0.941176)
-
-[node name="coin" parent="shop/wanderer3" instance=ExtResource("6_p0iyk")]
-position = Vector2(57, 63)
-scale = Vector2(0.6, 0.6)
-
-[node name="wanderer_button" type="Button" parent="shop/wanderer3"]
+[node name="buyButton" type="Button" parent="shop/wanderer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_right = 70.0
@@ -340,6 +231,4 @@ texture_filter = 2
 position = Vector2(1104, 46)
 scale = Vector2(3, 3)
 
-[connection signal="pressed" from="shop/wanderer/wanderer_button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="shop/wanderer2/wanderer_button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="shop/wanderer3/wanderer_button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="shop/wanderer/buyButton" to="." method="_on_button_pressed" binds= [10, "wanderer"]]

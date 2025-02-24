@@ -14,7 +14,7 @@ func _process(_delta):
 	
 	$coin.get_node("coinLabel").text = str(Global.money)
 	
-	$shop/wanderer/wanderer_placer.global_position = get_global_mouse_position()
+	$shop/wanderer/placer.global_position = get_global_mouse_position()
 
 func draw_hearts():
 	match Global.hearts_remaining:
@@ -25,15 +25,19 @@ func draw_hearts():
 		0:
 			$HBoxContainer/heart1.animation = "dead"
 
-func _on_button_pressed():
+func _on_button_pressed(price: int, type: String):
+	if Global.money < price:
+		return
 	if !Global.buyer_mode:
+		Global.money -= price
 		Global.buyer_mode = true
 		var defendr = defenders.instantiate()
-		$shop/wanderer/wanderer_placer.add_child(defendr)
+		if type == "wanderer":
+			$shop/wanderer/placer.add_child(defendr)
 
 func _reset_placer():
-	if $shop/wanderer/wanderer_placer.get_child_count() > 0:
-		$shop/wanderer/wanderer_placer.get_child(0).queue_free()
+	if $shop/wanderer/placer.get_child_count() > 0:
+		$shop/wanderer/placer.get_child(0).queue_free()
 
 func show_end_screen():
 	get_tree().paused = true  
