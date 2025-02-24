@@ -7,6 +7,7 @@ var zombie_counter = 7
 var money = 20
 var money_earned = 0
 var kills = 0
+var def_type = 0
 
 var hearts_remaining = 3
 
@@ -23,3 +24,4 @@ func reset():
 	money = 20
 	hearts_remaining = 3
 	money_earned = 0
+	def_type = 0

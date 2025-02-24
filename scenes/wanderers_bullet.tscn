@@ -1,30 +1,30 @@
 [gd_scene load_steps=11 format=3 uid="uid://cnydcwto7v1i2"]
 
-[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_rh3fb"]
-[ext_resource type="Texture2D" uid="uid://comqa7sdxjofl" path="res://img/Wanderer Magican/Charge_2.png" id="2_sk0rn"]
+[ext_resource type="Script" path="res://scripts/wanderers_bullet.gd" id="1_inf6m"]
+[ext_resource type="Texture2D" uid="uid://comqa7sdxjofl" path="res://img/Wanderer Magican/Charge_2.png" id="2_dt1vq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbr8b"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(0, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twyq8"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(64, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_743wo"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(128, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lktjh"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(192, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3qwp"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(256, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_328tp"]
-atlas = ExtResource("2_sk0rn")
+atlas = ExtResource("2_dt1vq")
 region = Rect2(320, 0, 64, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvrrw"]
@@ -62,7 +62,7 @@ animations = [{
 radius = 2.82843
 
 [node name="bullet" type="Node2D"]
-script = ExtResource("1_rh3fb")
+script = ExtResource("1_inf6m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

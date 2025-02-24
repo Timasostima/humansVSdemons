@@ -20,36 +20,32 @@ position = Vector2(704, 368)
 scale = Vector2(1, 1.032)
 
 [node name="4" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2.48999, -269.621)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("4_xbul6")
 
 [node name="3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1.96078, -307.596)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("3_4drs0")
 
 [node name="5" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1.96078, 125.317)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("5_wyybp")
 
 [node name="2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1.96075, -94.937)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("2_o73ww")
 
 [node name="1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2.48999, 208.861)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("1_6il5n")
 
 [node name="Terrace" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1.96075, -18.9874)
 scale = Vector2(0.369073, 0.369073)
 texture = ExtResource("6_nf3wa")
