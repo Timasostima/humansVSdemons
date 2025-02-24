@@ -101,7 +101,7 @@ func die():
 	
 	queue_free()
 	if loot:
-		Global.money += 5
+		Global.kill(1, 5)
 		loot = false
 	
 

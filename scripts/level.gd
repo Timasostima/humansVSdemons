@@ -1,7 +1,7 @@
 extends Node2D
 
 var defenders = preload("res://scenes/defender.tscn")
-var end_screen = preload("res://scenes/end_menu.tscn")  # Load the end screen
+var end_screen = preload("res://scenes/end_menu.tscn")
 
 func _ready():
 	pass
@@ -34,22 +34,15 @@ func show_end_screen():
 	Global.buyer_mode = false
 	Global.placement_check_mode = false
 	
-	
 	$shop.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$DefenderGrid.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-
 
 	# Instantiate the end screen UI
 	var end_screen_instance = end_screen.instantiate()
 	add_child(end_screen_instance)
 
-	
-	# Set the final results text
-	#end_screen_instance.get_node("ResultLabel").text = "Game Over! You earned " + str(Global.money) + " coins."
-
-	# Connect restart button to reset the game
-	#end_screen_instance.get_node("RestartButton").connect("pressed", Callable(self, "_restart_game"))
+	end_screen_instance.get_node("results/moneyEarnedNum").text = str(Global.money_earned)
+	end_screen_instance.get_node("results/demonsKilledNum").text = str(Global.kills)
 
 # Function to restart the game
 func _restart_game():
