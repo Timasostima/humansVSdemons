@@ -10,10 +10,10 @@ var kills = 0
 
 var hearts_remaining = 3
 
-func kill(demon, amount):
+func kill(demons, amount):
 	money += amount
 	money_earned += amount
-	kills += 1
+	kills += demons
 
 func reset():
 	location = Vector2(0,0)

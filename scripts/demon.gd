@@ -59,9 +59,9 @@ func start_attacking(target):
 	while target_in_area and hp > 0:
 		$AnimatedSprite2D.play("attack")
 		$attack/attack_collision.set_deferred("disabled", false)
-
+		
 		await $AnimatedSprite2D.animation_finished
-
+		
 		$attack/attack_collision.set_deferred("disabled", true)
 		
 		if is_instance_valid(target) and hp > 0:
@@ -71,7 +71,7 @@ func start_attacking(target):
 			print("defender hp:", defender.hp)
 			if defender.hp <= 0:
 				stop_attacking()
-
+		
 		if not target_in_area:
 			stop_attacking()
 			break
@@ -85,7 +85,7 @@ func die():
 	$attack/attack_collision.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("die")
 	target_in_area = false
-
+	
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property($coin, "modulate:a", 1.0, 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)  # Smoother fade-in
@@ -98,7 +98,7 @@ func die():
 	await tween.finished	
 	
 	$coin.visible = false
-	
+
 	queue_free()
 	if loot:
 		Global.kill(1, 5)

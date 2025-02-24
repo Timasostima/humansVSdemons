@@ -132,11 +132,11 @@ color = Color(0.294087, 0.23888, 0.266728, 1)
 position = Vector2(6, 4)
 scale = Vector2(0.811197, 0.811197)
 
-[node name="heart" type="AnimatedSprite2D" parent="HBoxContainer"]
+[node name="heart1" type="AnimatedSprite2D" parent="HBoxContainer"]
 position = Vector2(27, 43)
 scale = Vector2(3.21329, 3.21329)
 sprite_frames = SubResource("SpriteFrames_ewajr")
-animation = &"dead"
+animation = &"active"
 autoplay = "active"
 
 [node name="heart2" type="AnimatedSprite2D" parent="HBoxContainer"]
