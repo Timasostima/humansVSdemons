@@ -3,6 +3,8 @@ extends Control
 func _ready():
 	var viewport_size = get_viewport_rect().size
 	$results.position = viewport_size / 2
+	if !Global.music_playing:
+		$AudioStreamPlayer2D.stop()
 
 func _process(_delta):
 	pass

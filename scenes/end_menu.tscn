@@ -380,7 +380,7 @@ texture = ExtResource("10_viyec")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("12_qs8ha")
-volume_db = -5.0
+volume_db = -7.0
 autoplay = true
 
 [connection signal="pressed" from="results/returnToMenu/Button" to="." method="_on_button_pressed"]

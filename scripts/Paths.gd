@@ -34,7 +34,7 @@ func count_demons() -> int:
 
 func duplicate_zombie(path_node: Path2D):
 	var new_demon = demon.instantiate()
-	var new_hp = int(100 * (1.1 ** (Global.wave_number - 1)))
+	var new_hp = int(new_demon.full_hp * (1.1 ** (Global.wave_number - 1)))
 	new_demon.set_full_hp(new_hp)
 	path_node.add_child(new_demon)
 

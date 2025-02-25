@@ -546,7 +546,7 @@ Kulivar Shymanskyi"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_366q1")
-volume_db = -6.0
+volume_db = -2.0
 autoplay = true
 
 [connection signal="focus_entered" from="menu/startButton/Button" to="." method="_start_entered"]
@@ -560,6 +560,7 @@ autoplay = true
 [connection signal="focus_exited" from="music/button" to="." method="_music_exited"]
 [connection signal="mouse_entered" from="music/button" to="." method="_music_entered"]
 [connection signal="mouse_exited" from="music/button" to="." method="_music_exited"]
+[connection signal="pressed" from="music/button" to="." method="_toggle_music"]
 [connection signal="focus_entered" from="github/button" to="." method="_github_entered"]
 [connection signal="focus_exited" from="github/button" to="." method="_github_exited"]
 [connection signal="mouse_entered" from="github/button" to="." method="_github_entered"]

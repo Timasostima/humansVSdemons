@@ -5,10 +5,11 @@ var placement_check_mode = false
 var buyer_mode = false
 var zombie_counter = 6
 var wave_number = 1
-var money = 35
+var money = 40
 var money_earned = 0
 var kills = 0
 var def_type = 0
+var music_playing = true
 
 var hearts_remaining = 3
 

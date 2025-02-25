@@ -11,6 +11,9 @@ func _ready():
 	$shop/lightning_mage/coin.get_node("coinLabel").text = "20"
 	$shop/fire_mage/coin.get_node("coinLabel").text = "15"
 	$coin.get_node("coinLabel").text = str(Global.money)
+	print("music should be playing? ", Global.music_playing)
+	if !Global.music_playing:
+		$AudioStreamPlayer2D.stop()
 	pass
 
 func _process(_delta):
