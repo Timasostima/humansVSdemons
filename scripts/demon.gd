@@ -4,6 +4,7 @@ const MOVING_SPEED = 0.05
 const DAMAGE = 15
 
 var hp = 100
+var full_hp = 100
 var attacking = false  
 var target_in_area = false
 var loot = true
@@ -11,8 +12,12 @@ var loot = true
 func _ready():
 	$coin.visible = true
 	$coin.modulate.a = 0.0
-	$coin.get_node("coinLabel").text = "+5"
+	$coin.get_node("coinLabel").text = "+2"
 	$AnimatedSprite2D.play("walk")
+
+func set_full_hp(calculated_hp):
+	full_hp = calculated_hp
+	hp = full_hp
 
 func _process(delta):
 	check_hp()
@@ -30,11 +35,11 @@ func _process(delta):
 func check_hp():
 	hp = 0 if hp < 0 else hp
 	$hpLabel.text = str(hp)
-	if hp > 75:
+	if hp > int(full_hp * 0.75):
 		$hpLabel.add_theme_color_override("font_color", Color("00ff00"))
-	elif hp > 50:
+	elif hp > int(full_hp * 0.75):
 		$hpLabel.add_theme_color_override("font_color", Color("66ff00"))
-	elif hp > 25:
+	elif hp > int(full_hp * 0.5):
 		$hpLabel.add_theme_color_override("font_color", Color("ff6600"))
 	elif hp > 0:
 		$hpLabel.add_theme_color_override("font_color", Color("ff0000"))
@@ -101,7 +106,7 @@ func die():
 
 	queue_free()
 	if loot:
-		Global.kill(1, 5)
+		Global.kill(1, 2)
 		loot = false
 	
 

@@ -49,7 +49,6 @@ func fire_bullet():
 
 func short_attack():
 	$shortAttackArea/attackArea.set_deferred("disabled", false)
-	# Ensure the hitbox is disabled after a brief moment
 	await get_tree().create_timer(0.2).timeout
 	$shortAttackArea/attackArea.set_deferred("disabled", true)
 

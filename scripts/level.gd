@@ -8,7 +8,7 @@ var end_screen = preload("res://scenes/end_menu.tscn")
 func _ready():
 	await get_tree().create_timer(3.0).timeout
 	$shop/wanderer/coin.get_node("coinLabel").text = "10"
-	$shop/lightning_mage/coin.get_node("coinLabel").text = "15"
+	$shop/lightning_mage/coin.get_node("coinLabel").text = "20"
 	pass
 
 func _process(_delta):

@@ -325,8 +325,8 @@ position = Vector2(96, 0)
 
 [node name="coin" parent="." instance=ExtResource("6_p0iyk")]
 texture_filter = 2
-position = Vector2(1104, 46)
+position = Vector2(1179, 46)
 scale = Vector2(3, 3)
 
 [connection signal="pressed" from="shop/wanderer/buyButton" to="." method="_on_button_pressed" binds= [10, "wanderer"]]
-[connection signal="pressed" from="shop/lightning_mage/buyButton" to="." method="_on_button_pressed" binds= [15, "lightning_mage"]]
+[connection signal="pressed" from="shop/lightning_mage/buyButton" to="." method="_on_button_pressed" binds= [20, "lightning_mage"]]

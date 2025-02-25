@@ -3,8 +3,9 @@ extends Node
 var location = Vector2(0,0)
 var placement_check_mode = false
 var buyer_mode = false
-var zombie_counter = 7
-var money = 20
+var zombie_counter = 6
+var wave_number = 1
+var money = 35
 var money_earned = 0
 var kills = 0
 var def_type = 0
@@ -25,3 +26,4 @@ func reset():
 	hearts_remaining = 3
 	money_earned = 0
 	def_type = 0
+	wave_number = 1

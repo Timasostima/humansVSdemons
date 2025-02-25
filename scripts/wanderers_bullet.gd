@@ -1,7 +1,7 @@
 extends Node2D
 
-const speed = 150
-const damage = 15
+const speed = 100
+const damage = 20
 
 func _process(_delta):
 	position.x += speed * _delta * 1.5
