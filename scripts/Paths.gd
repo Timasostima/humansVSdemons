@@ -6,7 +6,7 @@ const time_to_create = 5
 func _ready():
 	create_demons()
 
-func _process(delta):
+func _process(_delta):
 	var demons_counter = count_demons()
 	if demons_counter == 0:
 		Global.wave_number += 1

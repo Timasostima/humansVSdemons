@@ -4,7 +4,7 @@ func _ready():
 	var viewport_size = get_viewport_rect().size
 	$results.position = viewport_size / 2
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_button_pressed():

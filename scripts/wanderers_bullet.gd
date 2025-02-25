@@ -3,8 +3,8 @@ extends Node2D
 const speed = 100
 const damage = 20
 
-func _process(_delta):
-	position.x += speed * _delta * 1.5
+func _process(delta):
+	position.x += speed * delta * 1.5
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy"):

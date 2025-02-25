@@ -2,7 +2,8 @@ extends Node2D
 
 var can_attack = false
 var bullet = preload("res://scenes/wanderers_bullet.tscn")
-var hp = 100
+var full_hp = 100
+var hp = full_hp
 const short_atk_dmg = 35
 
 func _ready():
@@ -24,11 +25,11 @@ func _process(_delta):
 func check_hp():
 	hp = 0 if hp < 0 else hp
 	$hpLabel.text = str(hp)
-	if hp > 75:
+	if hp > int(full_hp * 0.75):
 		$hpLabel.add_theme_color_override("font_color", Color("00ff00"))
-	elif hp > 50:
+	elif hp > int(full_hp * 0.5):
 		$hpLabel.add_theme_color_override("font_color", Color("66ff00"))
-	elif hp > 25:
+	elif hp > int(full_hp * 0.25):
 		$hpLabel.add_theme_color_override("font_color", Color("ff6600"))
 	elif hp > 0:
 		$hpLabel.add_theme_color_override("font_color", Color("ff0000"))

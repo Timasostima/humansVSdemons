@@ -2,13 +2,15 @@ extends Node2D
 
 var wanderers = preload("res://scenes/wanderer.tscn")
 var lightning_mages = preload("res://scenes/lightning_mage.tscn")
+var fire_mages = preload("res://scenes/fire_mage.tscn")
 
 var end_screen = preload("res://scenes/end_menu.tscn")
 
 func _ready():
-	await get_tree().create_timer(3.0).timeout
 	$shop/wanderer/coin.get_node("coinLabel").text = "10"
 	$shop/lightning_mage/coin.get_node("coinLabel").text = "20"
+	$shop/fire_mage/coin.get_node("coinLabel").text = "15"
+	$coin.get_node("coinLabel").text = str(Global.money)
 	pass
 
 func _process(_delta):
@@ -21,6 +23,7 @@ func _process(_delta):
 	
 	$shop/wanderer/placer.global_position = get_global_mouse_position()
 	$shop/lightning_mage/placer.global_position = get_global_mouse_position()
+	$shop/fire_mage/placer.global_position = get_global_mouse_position()
 
 func draw_hearts():
 	match Global.hearts_remaining:
@@ -47,6 +50,10 @@ func _on_button_pressed(price: int, type: String):
 			var item_box = $shop/lightning_mage/ItemBox
 			tween.tween_property(item_box, "modulate", Color(1, 0.3, 0.3, 1), 0.25)
 			tween.tween_property(item_box, "modulate", Color(1, 1, 1, 1), 0.25).set_delay(0.25)
+		elif type == "fire_mage":
+			var item_box = $shop/fire_mage/ItemBox
+			tween.tween_property(item_box, "modulate", Color(1, 0.3, 0.3, 1), 0.25)
+			tween.tween_property(item_box, "modulate", Color(1, 1, 1, 1), 0.25).set_delay(0.25)
 		return
 	
 	if !Global.buyer_mode:
@@ -60,6 +67,10 @@ func _on_button_pressed(price: int, type: String):
 			var defendr = lightning_mages.instantiate()
 			$shop/lightning_mage/placer.add_child(defendr)
 			Global.def_type = 2
+		elif type == "fire_mage":
+			var defendr = fire_mages.instantiate()
+			$shop/fire_mage/placer.add_child(defendr)
+			Global.def_type = 3
 
 
 
@@ -70,6 +81,8 @@ func _reset_placer():
 		$shop/wanderer/placer.get_child(0).queue_free()
 	if $shop/lightning_mage/placer.get_child_count() > 0:
 		$shop/lightning_mage/placer.get_child(0).queue_free()
+	if $shop/fire_mage/placer.get_child_count() > 0:
+		$shop/fire_mage/placer.get_child(0).queue_free()
 	Global.def_type = 0
 
 func show_end_screen():

@@ -2,9 +2,10 @@ extends PathFollow2D
 
 const MOVING_SPEED = 0.05
 const DAMAGE = 15
+const LOOT = 3
 
-var hp = 100
 var full_hp = 100
+var hp = full_hp
 var attacking = false  
 var target_in_area = false
 var loot = true
@@ -100,13 +101,13 @@ func die():
 	tween.tween_property($hpLabel, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
 	await $AnimatedSprite2D.animation_finished
-	await tween.finished	
+	await tween.finished
 	
 	$coin.visible = false
 
 	queue_free()
 	if loot:
-		Global.kill(1, 2)
+		Global.kill(1, LOOT)
 		loot = false
 	
 

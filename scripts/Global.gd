@@ -13,9 +13,9 @@ var def_type = 0
 var hearts_remaining = 3
 
 func kill(demons, amount):
+	kills += demons
 	money += amount
 	money_earned += amount
-	kills += demons
 
 func reset():
 	location = Vector2(0,0)

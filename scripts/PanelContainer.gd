@@ -2,6 +2,7 @@ extends PanelContainer
 
 var wanderer_scene = preload("res://scenes/wanderer.tscn")
 var lightning_mage_scene = preload("res://scenes/lightning_mage.tscn")
+var fire_mage_scene = preload("res://scenes/fire_mage.tscn")
 var can_build = false
 var count = 0
 
@@ -26,6 +27,8 @@ func place():
 	match Global.def_type:
 		1: defender = wanderer_scene.instantiate()
 		2: defender = lightning_mage_scene.instantiate()
+		3: defender = fire_mage_scene.instantiate()
+		_: return
 	defender.get_node("shadow").visible = true
 	defender.get_node("hpLabel").visible = true
 	$Marker2D.add_child(defender)

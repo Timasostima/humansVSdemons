@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcdumqf2bxdh"]
+[gd_scene load_steps=25 format=3 uid="uid://dcdumqf2bxdh"]
 
 [ext_resource type="Script" path="res://scripts/end_menu.gd" id="1_ah431"]
 [ext_resource type="Texture2D" uid="uid://di72ve6bn4e8m" path="res://img/UI/RectangleBox_96x96.png" id="1_m2tkp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cty8vnyjoshjq" path="res://img/UI/HighlightSlot_26x26.png" id="8_h2pub"]
 [ext_resource type="Texture2D" uid="uid://bu8yv55gsih86" path="res://img/UI/TopPatternPanel_02_33x15.png" id="10_eyf55"]
 [ext_resource type="Texture2D" uid="uid://cmlfbt8j527f6" path="res://img/UI/BlackBigCircleBoxWithBorder_27x27.png" id="10_viyec"]
+[ext_resource type="AudioStream" uid="uid://pwadjh1yl31q" path="res://audio/Illusory-Realm-MP3(chosic.com).mp3" id="12_qs8ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3dex"]
 atlas = ExtResource("4_gx4ya")
@@ -121,7 +122,7 @@ offset_left = -28.0
 offset_top = -40.0
 offset_right = 12.0
 scale = Vector2(32.4743, 19.1569)
-color = Color(0.813258, 0.813258, 0.813258, 0.317647)
+color = Color(0.741385, 0.741385, 0.741385, 0.317647)
 
 [node name="failLabel" type="Node2D" parent="."]
 
@@ -375,5 +376,11 @@ texture = ExtResource("10_viyec")
 position = Vector2(134.359, 132.788)
 scale = Vector2(0.946242, 0.946242)
 texture = ExtResource("10_viyec")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("12_qs8ha")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="results/returnToMenu/Button" to="." method="_on_button_pressed"]
